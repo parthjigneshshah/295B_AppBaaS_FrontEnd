@@ -993,7 +993,8 @@ body.page-container-boxed.wall_10 {
 .x-navigation > li.xn-logo > a:first-child {
   font-size: 0px;
   text-indent: -9999px;
-  background: url("../img/logo.png") top center no-repeat #e34724;
+  //background: url("../img/logo.png") top center no-repeat #e34724;
+  background: #e34724;
   padding: 0px;
   border-bottom: 0px;
   color: #FFF;
