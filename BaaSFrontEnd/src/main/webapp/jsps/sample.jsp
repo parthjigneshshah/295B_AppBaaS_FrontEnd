@@ -16,7 +16,7 @@
                 
                <%@ include file= "header.jsp" %>
                 <div class="page-title">                    
-                    <h2><span class="fa fa-arrow-circle-o-left"></span> Page Title</h2>
+                    <h2><span class="fa fa-arrow-circle-o-left"></span> Log In</h2>
                 </div>                   
                 
                 <!-- PAGE CONTENT WRAPPER -->
@@ -27,10 +27,10 @@
 
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Panel Title</h3>
+                                    <h3 class="panel-title">Log in ...</h3>
                                 </div>
                                 <div class="panel-body">
-                                    Panel body
+                                    <%@include file = "../pages-login-v2.html" %>
                                 </div>
                             </div>
 
