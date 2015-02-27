@@ -26,7 +26,10 @@
         <script type='text/javascript' src='../js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
         <script type='text/javascript' src='../js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>                
         <script type='text/javascript' src='../js/plugins/bootstrap/bootstrap-datepicker.js'></script>                
-        <script type="text/javascript" src="../js/plugins/owl/owl.carousel.min.js"></script>                 
+        <script type="text/javascript" src="../js/plugins/owl/owl.carousel.min.js"></script>      
+        
+         <script type="text/javascript" src="../js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>        
+        <script type="text/javascript" src="../js/plugins/jquery-validation/jquery.validate.js"></script>           
         
         <script type="text/javascript" src="../js/plugins/moment.min.js"></script>
         <script type="text/javascript" src="../js/plugins/daterangepicker/daterangepicker.js"></script>
@@ -41,5 +44,9 @@
         <script type="text/javascript" src="../js/demo_dashboard.js"></script>
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->    
+    
+    
+    
+    
 </body>
 </html>

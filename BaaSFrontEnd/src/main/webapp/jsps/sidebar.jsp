@@ -17,13 +17,17 @@
                         <a href="#" class="x-navigation-control"></a>
                     </li>
                     <li class="xn-profile">
-                        <a href="#" class="profile-mini">
+                        <a href="../pages-profile.html" class="profile-mini">
                             <img src="../assets/images/users/avatar.jpg" alt="John Doe"/>
                         </a>
                         <div class="profile">
+                        
                             <div class="profile-image">
+                            <a href="../pages-profile.html">
                                 <img src="../assets/images/users/avatar.jpg" alt="John Doe"/>
+                            </a>
                             </div>
+                            
                             <div class="profile-data">
                                 <div class="profile-data-name">John Doe</div>
                                 <div class="profile-data-title">Web Developer/Designer</div>

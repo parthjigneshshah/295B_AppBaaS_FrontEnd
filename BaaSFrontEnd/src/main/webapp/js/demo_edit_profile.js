@@ -20,7 +20,7 @@ $(function(){
             $("#cp_accept").prop("disabled",false).removeClass("disabled");
             
             $("#cp_accept").on("click",function(){                
-                $("#user_image").html('<img src="img/loaders/default.gif"/>');
+                $("#user_image").html('<img src="../img/loaders/default.gif"/>');
                 $("#modal_change_photo").modal("hide");
                 
                 $("#cp_crop").ajaxForm({target: '#user_image'}).submit();

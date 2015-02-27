@@ -20,26 +20,7 @@
                         </form>
                     </li>   
                     <!-- END SEARCH -->                    
-                    <!-- POWER OFF -->
-                    <li class="xn-icon-button pull-right last">
-                        <a href="#"><span class="fa fa-power-off"></span></a>
-                        <ul class="xn-drop-left animated zoomIn">
-                            <li><a href="../pages-lock-screen.html"><span class="fa fa-lock"></span> Lock Screen</a></li>
-                            <li><a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span> Sign Out</a></li>
-                        </ul>                        
-                    </li> 
-                    <!-- END POWER OFF -->                    
-					<!--  edit profile  -->                   
-                     <li class="xn-icon-button pull-right">
-                        <a href="pages-edit-profile.jsp"><span class="fa fa-pencil"></span></a>
-                     </li>
-                    <!-- end of edit profile -->
-                    <!-- application form -->
-                     <li class="xn-icon-button pull-right">
-                        <a href="pages-applicationFrom-demo.jsp"><span class="fa fa-tasks"></span></a>
-                     </li>
-                    
-                    <!-- end of application form -->
+                                      
                     <!-- LANG BAR -->
                     <li class="xn-icon-button pull-right">
                         <a href="#"><span class="flag flag-gb"></span></a>
@@ -53,7 +34,7 @@
                 </ul>
                 <!-- END X-NAVIGATION VERTICAL -->                     
 
-                               
+                             
                 
               
         

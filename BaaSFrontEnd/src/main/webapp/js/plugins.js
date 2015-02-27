@@ -281,7 +281,15 @@ $(function() {
                                 },
                                 adress: {
                                     required: true
+                                },
+                                applicationname: {
+                                	required: true
+                                },
+                                
+                                applicationversion: {
+                                	required: true
                                 }
+                                
                             }
                         });
                         

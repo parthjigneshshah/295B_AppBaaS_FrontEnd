@@ -9,34 +9,17 @@
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
             <!-- START PAGE SIDEBAR -->
-            <%@ include file = "sidebar.jsp" %>
+               <%@ include file= "sidebar.jsp" %>
             <!-- END PAGE SIDEBAR -->
             <!-- PAGE CONTENT -->
             <div class="page-content">
                 
                <%@ include file= "header.jsp" %>
-                <div class="page-title">                    
-                    <h2><span class="fa fa-arrow-circle-o-left"></span> Log In</h2>
-                </div>                   
+                                 
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-                
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Log in ...</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <%@include file = "../pages-login-v2.html" %>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                
+           >
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->                
             </div>            
