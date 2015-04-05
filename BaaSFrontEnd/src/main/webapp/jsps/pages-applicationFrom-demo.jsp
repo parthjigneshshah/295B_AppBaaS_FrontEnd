@@ -123,7 +123,7 @@
                                                                                           
 
                                         </div>          
-                                        <div id="step-3">
+                                      <div id="step-3">
 
                                             <div class="form-group">
                                                 <label class="col-md-2 control-label">Name</label>
@@ -144,7 +144,7 @@
                                                 </div>                                        
                                             </div>                                                     
 
-                                        </div>          
+                                        </div>            
                                                                                                                                                 
                                     </div>
                                     </form>

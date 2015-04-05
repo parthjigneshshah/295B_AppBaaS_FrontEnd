@@ -19,7 +19,7 @@
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-           >
+           
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->                
             </div>            

@@ -299,12 +299,15 @@ $(function() {
                     // This part of code can be removed FROM
                     onLeaveStep: function(obj){
                         var wizard = obj.parents(".wizard");
+                        
+                      //  alert("in wizard");
 
                         if(wizard.hasClass("wizard-validation")){
-                            
+                        //	alert("in wizard - validation");
                             var valid = true;
                             
                             $('input,textarea',$(obj.attr("href"))).each(function(i,v){
+                            	
                                 valid = validator.element(v) && valid;
                             });
                                                         
@@ -322,14 +325,15 @@ $(function() {
                     //This is important part of wizard init
                     onShowStep: function(obj){                        
                         var wizard = obj.parents(".wizard");
-
+                       
                         if(wizard.hasClass("show-submit")){
-                        
+                        	//alert("in show submt");
                             var step_num = obj.attr('rel');
                             var step_max = obj.parents(".anchor").find("li").length;
 
                             if(step_num == step_max){                             
                                 obj.parents(".wizard").find(".actionBar .btn-primary").css("display","block");
+                              //  alert("in next vala function");
                             }                         
                         }
                         return true;                         

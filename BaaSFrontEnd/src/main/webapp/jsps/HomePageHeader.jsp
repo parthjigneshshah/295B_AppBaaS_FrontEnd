@@ -20,7 +20,25 @@
                         </form>
                     </li>   
                     <!-- END SEARCH -->                    
-                                      
+                    <!-- POWER OFF -->
+                    <li class="xn-icon-button pull-right last" style="width:80px">
+                       <a href="#">AboutUs</a>
+                                              
+                    </li> 
+                    <!-- END POWER OFF -->                    
+					<!--  edit profile  -->                   
+                     <li class="xn-icon-button pull-right">
+                        <a href="pages-login.jsp"><span class="fa fa-sign-in"></span></a>
+                     </li>
+                      <li class="xn-icon-button pull-right">
+                        
+                        <a href="#"><span class="fa fa-book"></span></a>
+                     </li>
+                    <!-- end of edit profile -->
+                    <!-- application form -->
+                    
+                    
+                    <!-- end of application form -->
                     <!-- LANG BAR -->
                     <li class="xn-icon-button pull-right">
                         <a href="#"><span class="flag flag-gb"></span></a>
@@ -34,7 +52,7 @@
                 </ul>
                 <!-- END X-NAVIGATION VERTICAL -->                     
 
-                             
+                               
                 
               
         
