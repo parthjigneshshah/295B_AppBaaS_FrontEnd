@@ -7,7 +7,7 @@
         <style type="text/css"></style>
 	<style>
   #map-canvas{
-	width:200px;
+	width:400px;
 	height:400px;
 	background-color:#CC;
 	
@@ -45,8 +45,8 @@
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
                      <div class="row">
-                        <div class="col-md-8">
-                         <div class="col-md-8">
+                        <div class="col-md-12">
+                         <div class="col-md-6">
                  			           <div class="panel panel-default">
                  			            <div class="panel-heading">
                                     <h3 class="panel-title">About Us</h3>
@@ -58,7 +58,7 @@
                               
                                 
                                </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                  			           <div class="panel panel-default">
                  			            <div class="panel-heading">
                                     <h3 class="panel-title">Location</h3>
@@ -160,7 +160,7 @@
                         </div>                        
                         <div class="col-md-4">
                             
-                            <div class="panel panel-primary">
+                    <!--         <div class="panel panel-primary">
                                 <div class="panel-body">
                                     <h3>Search</h3>
                                     <form id="faqForm">
@@ -180,9 +180,9 @@
                                         </div>                                       
                                     </div>                                    
                                 </div>
-                            </div>
+                            </div> -->
                             
-                            <div class="panel panel-primary">
+                         <!--   <div class="panel panel-primary">
                                 <div class="panel-body">
                                     <h3>Contact</h3>
                                     <p>Feel free to contact us for any issues you might have with our products.</p>
@@ -203,7 +203,7 @@
                                     <button class="btn btn-default"><span class="fa fa-paperclip"></span> Add attachment</button>
                                     <button class="btn btn-success pull-right"><span class="fa fa-envelope-o"></span> Send</button>
                                 </div>
-                            </div>
+                            </div> -->
                             
                         </div>
                     </div>
