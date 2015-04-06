@@ -80,10 +80,10 @@
                 
                 <div class="registration-footer">
                     <div class="pull-left">
-                        &copy; 2015 AppName
+                        &copy; 2015 AppBass
                     </div>
                     <div class="pull-right">
-                        <a href="#">About</a> |
+                        <a href="pages-faq.jsp">About</a> |
                         <a href="#">Privacy</a> |
                         <a href="#">Contact Us</a>
                     </div>

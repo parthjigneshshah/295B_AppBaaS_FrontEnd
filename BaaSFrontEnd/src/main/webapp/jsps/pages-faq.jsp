@@ -7,7 +7,7 @@
         <style type="text/css"></style>
 	<style>
   #map-canvas{
-	width:500px;
+	width:200px;
 	height:400px;
 	background-color:#CC;
 	
@@ -31,28 +31,51 @@
     </head>
     <body>
         <!-- START PAGE CONTAINER -->
-        <div class="page-container">
+        <div class="page-container" style = "background: none repeat scroll 0 0 #f5f5f5;">
+         <%@ include file= "header.jsp" %>
             <!-- START PAGE SIDEBAR -->
              
             <!-- END PAGE SIDEBAR -->
             <!-- PAGE CONTENT -->
-            <div class="page-content">
+            <div class="page-content" style = "margin:60px">
                 
-               <%@ include file= "header.jsp" %>
+              
                                  
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
                      <div class="row">
                         <div class="col-md-8">
+                         <div class="col-md-8">
+                 			           <div class="panel panel-default">
+                 			            <div class="panel-heading">
+                                    <h3 class="panel-title">About Us</h3>
+                                </div>
+                                <div class="panel-body" align = "center">
+                                    
+                                </div>
+                               </div>
+                              
+                                
+                               </div>
+                                <div class="col-md-4">
                  			           <div class="panel panel-default">
                  			            <div class="panel-heading">
                                     <h3 class="panel-title">Location</h3>
                                 </div>
                                 <div class="panel-body" align = "center">
+                                   
+                                    <div class="faq-title">
+                                     <span class="fa fa-map-marker"> </span> 
+                                  	<p>
+                                  	<strong>Address</strong></p>
+                                  	<p> 1 Washington Square, <br/> San Jose, <br/> CA - 95112.<br/></p>
+                                  	
+                                     </div>
                                      <div id="map-canvas" align = "center"></div>
+                                     
                                 </div>
-                               
+                               </div>
                               
                                 
                                </div>

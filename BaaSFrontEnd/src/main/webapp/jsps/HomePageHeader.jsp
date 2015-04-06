@@ -22,7 +22,7 @@
                     <!-- END SEARCH -->                    
                     <!-- POWER OFF -->
                     <li class="xn-icon-button pull-right last" style="width:80px">
-                       <a href="#">AboutUs</a>
+                       <a href="pages-faq.jsp">AboutUs</a>
                                               
                     </li> 
                     <!-- END POWER OFF -->                    
