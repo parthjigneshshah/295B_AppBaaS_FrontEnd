@@ -17,8 +17,8 @@
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-                     <div class="registration-container registration-extended">            
-            <div class="registration-box animated fadeInDown">
+                <div class="registration-container registration-extended">            
+            	<div class="registration-box animated fadeInDown">
                 <div class="registration-logo" align = "center">
                 <img alt="" src="../img/Logo2.png">
                 </div>
