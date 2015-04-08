@@ -116,7 +116,7 @@
                                           
                                             <p>
                                             
-                                            Anytime you make a network call to Parse on behalf of your app using one of the Parse SDKs or REST API, it counts as an API request. This does include things like queries, saves, logins, amongst other kinds of requests. It also includes requests to send push notifications, although this is seen as a single request regardless of how many recipients are targeted. Serving Parse files counts as an API request, including static assets served from Parse Hosting. Analytics requests do have a special exemption. You can send us your analytics events any time without being limited by your app's request limit.
+                                            Anytime you make a network call to AppBaas on behalf of your app using one of the AppBaas SDKs or REST API, it counts as an API request. This does include things like queries, saves, logins, amongst other kinds of requests. It also includes requests to send push notifications, although this is seen as a single request regardless of how many recipients are targeted. Serving AppBaas files counts as an API request, including static assets served from AppBaas Hosting. Analytics requests do have a special exemption. You can send us your analytics events any time without being limited by your app's request limit.
                                             </p>
                                         </div>
                                         
