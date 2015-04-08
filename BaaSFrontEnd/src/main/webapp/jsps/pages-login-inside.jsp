@@ -27,7 +27,7 @@
                                 <div class="login-box animated fadeInDown">
                                     <div class="login-body">
                                         <div class="login-title"><strong>Welcome</strong>, Please login.</div>
-                                        <form action="indexSample.jsp" class="form-horizontal" method="post">
+                                        <form action="pages-applications.jsp" class="form-horizontal" method="post">
                                         <div class="form-group">
                                             <div class="col-md-12">
                                                 <div class="input-group">
@@ -53,7 +53,7 @@
                                                 <a href="#">Forgot your password?</a>
                                             </div>          
                                             <div class="col-md-6 text-right">
-                                                <a href="FirstPage.jsp">Create an account</a>
+                                                <a href="pages-registration.jsp">Create an account</a>
                                             </div>              
                                         </div>
                                         <div class="form-group">

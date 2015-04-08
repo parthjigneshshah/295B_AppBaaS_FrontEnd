@@ -707,7 +707,7 @@ body.page-container-boxed.wall_10 {
 .x-navigation.x-navigation-horizontal .xn-icon-button > a {
   padding: 15px 10px;
   text-align: center;
-  width: 50px;
+  width: 120px;
 }
 .x-navigation.x-navigation-horizontal .xn-icon-button > a .fa,
 .x-navigation.x-navigation-horizontal .xn-icon-button > a .glyphicon {
@@ -838,7 +838,7 @@ body.page-container-boxed.wall_10 {
 .x-navigation.x-navigation-minimized > li.xn-logo > a:first-child {
   padding: 0px;
   width: 50px;
-  background-image: url("../img/logo-small.png");
+  background-image: url("../img/Logo1.png");
 }
 .x-navigation.x-navigation-minimized .xn-search input {
   width: 30px;
@@ -995,8 +995,8 @@ body.page-container-boxed.wall_10 {
 .x-navigation > li.xn-logo > a:first-child {
   font-size: 0px;
   text-indent: -9999px;
-  //background: url("../img/logo.png") top center no-repeat #e34724;
-  background: #e34724;
+  background: url("../img/Logo1.png") top center no-repeat #e34724;
+  //background: #e34724;
   padding: 0px;
   border-bottom: 0px;
   color: #FFF;
@@ -4329,7 +4329,7 @@ td.dataTables_empty {
   //padding-top: 100px;
 }
 .registration-container .registration-box .registration-logo {
-  //background: url("../img/logo-lr.png") top center no-repeat;
+  background: url("../img/Logo2.png") top center no-repeat;
   width: 100%;
   height: 100px;
   float: inherit;
@@ -4412,7 +4412,7 @@ td.dataTables_empty {
   padding-top: 100px;
 }
 .login-container .login-box .login-logo {
-  background: url("../img/logo-lr.png") top center no-repeat;
+  background: url("../img/Logo1.png") top center no-repeat;
   width: 100%;
   height: 100px;
   float: left;
@@ -8771,7 +8771,7 @@ li.ext_zip {
     background-image: url("../img/jqyery/resize-icon@2x.png");
   }
   .x-navigation > li.xn-logo > a:first-child {
-    background-image: url("../img/logo1.png");
+    background-image: url("../img/Logo1.png");
     background-size: 220px 50px;
   }
   .x-navigation.x-navigation-minimized > li.xn-logo > a:first-child {

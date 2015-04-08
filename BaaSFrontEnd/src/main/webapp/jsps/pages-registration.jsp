@@ -20,7 +20,6 @@
                 <div class="registration-container registration-extended">            
             	<div class="registration-box animated fadeInDown">
                 <div class="registration-logo" align = "center">
-                <img alt="" src="../img/Logo2.png">
                 </div>
                 <div class="registration-body" align="center">
                     
@@ -78,16 +77,7 @@
                     
                 </div>
                 
-                <div class="registration-footer">
-                    <div class="pull-left">
-                        &copy; 2015 AppBass
-                    </div>
-                    <div class="pull-right">
-                        <a href="pages-faq.jsp">About</a> |
-                        <a href="#">Privacy</a> |
-                        <a href="#">Contact Us</a>
-                    </div>
-                </div>
+                <%@ include file = "footer.jsp" %>
             </div>
             
         </div>

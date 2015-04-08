@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>AppBaaS</title>
  <!-- META SECTION -->	
         <title>CMPE 295B - Backend as a Service</title>            
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
