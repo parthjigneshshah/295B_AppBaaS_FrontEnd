@@ -7,10 +7,9 @@
         <style type="text/css"></style>
 	<style>
   #map-canvas{
-	width:400px;
-	height:400px;
+	width:450px;
+	height:500px;
 	background-color:#CC;
-	
   }
   </style>
    <script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -46,19 +45,41 @@
                 <div class="page-content-wrap">
                      <div class="row">
                         <div class="col-md-12">
-                         <div class="col-md-6">
+                         <div class="col-md-7">
                  			           <div class="panel panel-default">
                  			            <div class="panel-heading">
                                     <h3 class="panel-title">About Us</h3>
                                 </div>
-                                <div class="panel-body" align = "center">
+                                <div class="panel-body" align = "left">
+                                    <h4>
+                                    AppBaas as a perfect cloud based solution for backend of your applications:
+                                    </h4>
+                                    <p> 
+                                    Application Backend as a service provides a complete solution for the backend implementation with most of the commonly used backend services. It gives you the ability of rapid development of applications to meet your user needs. 
+                                     </p>
+                                     <p>
+                                     Our cloud based Solution makes the scaling of your application very easy. AppBaas also includes analytics dashboard which gives you an insight about your users and also where the traffic is coming from.
+                                     <br/>
+                                     </p>
+                                    <h4> SDK </h4> 
+                                    <p>
+                                    AppBaas also includes a SDK for you to access and develop your own custom functionalities, the SDK comes with proper documentation for a developer to use. 
+                                     </p>
+                                    <br/>
+                                    <br/>
+                                    <br/>
                                     
+                                    <p>
+                                    
+                                    Contact us: <br/>
+                                    developer@appbaas.com <br/>
+                                    1 Washington Square, <br/> San Jose, CA - 95112.
+                                    </p>
                                 </div>
                                </div>
-                              
-                                
+                                                          
                                </div>
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                  			           <div class="panel panel-default">
                  			            <div class="panel-heading">
                                     <h3 class="panel-title">Location</h3>
@@ -84,19 +105,64 @@
                                           
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <h3 class="push-down-0">General Quesions</h3>
+                                    <h3 class="push-down-0">FAQ</h3>
                                 </div>
                                 <div class="panel-body faq">
                                     
                                     <div class="faq-item">
-                                        <div class="faq-title"><span class="fa fa-angle-down"></span>How to aliquam at ipsum sapien?</div>
+                                        <div class="faq-title"><span class="fa fa-angle-down"></span>What is considered an API request?</div>
                                         <div class="faq-text">
-                                            <h5>Aliquam at ipsum sapien</h5>
-                                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec adipiscing vehicula tortor dapibus adipiscing.</p>
-                                            <p>Nullam quis quam massa. Donec vitae metus tortor. Vestibulum vel diam orci. Etiam sollicitudin venenatis justo ut posuere. Etiam facilisis est ut ligula ornare accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                                          <!--  <h5>Aliquam at ipsum sapien</h5> -->
+                                          
+                                            <p>
+                                            
+                                            Anytime you make a network call to Parse on behalf of your app using one of the Parse SDKs or REST API, it counts as an API request. This does include things like queries, saves, logins, amongst other kinds of requests. It also includes requests to send push notifications, although this is seen as a single request regardless of how many recipients are targeted. Serving Parse files counts as an API request, including static assets served from Parse Hosting. Analytics requests do have a special exemption. You can send us your analytics events any time without being limited by your app's request limit.
+                                            </p>
                                         </div>
+                                        
+                                        
                                     </div>
-                                    
+                                      <div class="faq-item">
+                                        <div class="faq-title"><span class="fa fa-angle-down"></span>How frequently can I increase/decrease my request limit?</div>
+                                        <div class="faq-text">
+                                          
+                                          
+                                            <p>
+                                            You can increase/decrease your request/limit as frequently as you would like within a given month. We will prorate your charges on an hourly basis.
+                                            </p>
+                                        </div>
+                                        
+                                        
+                                        
+                                        
+                                         </div>
+                                      <div class="faq-item">
+                                        <div class="faq-title"><span class="fa fa-angle-down"></span>Do you offer autoscaling?</div>
+                                        <div class="faq-text">
+                                            <p>
+												No. We do not adjust your app's request limit automatically.    
+											</p>
+                                        </div>
+                                        
+                                        
+                                        
+                                        
+                                        </div>
+                                      <div class="faq-item">
+                                        <div class="faq-title"><span class="fa fa-angle-down"></span>What happens if I increase my request limit and my app does not exceed this limit?</div>
+                                        <div class="faq-text">
+                                            <p>
+											When you increase your request limit, you're provisioning additional capacity ahead of time. Your account will be billed according to the request limit that has been set, regardless of how many requests your app made.											
+											</p>
+                                        </div>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        <!-- 
+                                        
+                                    </div>
                                     <div class="faq-item">
                                         <div class="faq-title"><span class="fa fa-angle-down"></span>Nunc pellentesque sagittis pulvinar?</div>
                                         <div class="faq-text">
@@ -151,7 +217,7 @@
                                             <p>Nunc facilisis odio vitae eros rutrum, eget rutrum nulla rhoncus. Etiam laoreet pretium ex ut gravida. In venenatis turpis sit amet volutpat bibendum.</p>
                                         </div>
                                     </div>
-                                    
+                                    -->
                                 </div>
                             </div>
                             
