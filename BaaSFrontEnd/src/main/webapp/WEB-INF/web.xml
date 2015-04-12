@@ -4,4 +4,26 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+  	<servlet-name>RegistrationPageServlet</servlet-name>
+  	<display-name>RegistrationPageServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.RegistrationPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginPageServlet</servlet-name>
+  	<display-name>LoginPageServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.LoginPageServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>RegistrationPageServlet</servlet-name>
+  	<url-pattern>/RegistrationPageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginPageServlet</servlet-name>
+  	<url-pattern>/LoginPageServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

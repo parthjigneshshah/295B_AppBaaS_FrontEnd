@@ -28,5 +28,15 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/jersey-client-1.9.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/org.json-20120521.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/javax.ws.rs-api-2.0-m02.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/jersey-bundle-1.10-b01.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/grizzly-servlet-webserver-1.9.18-i.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/jersey-core-1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/jersey-server-1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/jsr311-api-1.1.jar"/>
+	<classpathentry kind="lib" path="F:/CMPE295B/AppCall 2/AppCall/WebContent/WEB-INF/lib/AppBaasClient.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
