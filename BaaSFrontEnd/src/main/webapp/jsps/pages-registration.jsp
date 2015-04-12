@@ -28,23 +28,23 @@
                        
                             
                             <div class="registration-title" align="center"><strong>Registration</strong>, use form below</div>
-                            <div class="registration-subtitle">Please Register in the the form below in order to use the services provided by the team.</div>
-                            <form action="pages-login.jsp" class="form-horizontal" method="post">
+                           
+                            <form action="../RegistrationPageServlet" class="form-horizontal" method="post">
 
                                 <h4>Personal info</h4>
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="text" class="form-control" placeholder="First Name"/>
+                                        <input type="text" name = "firstName" id = "useName" class="form-control" placeholder="First Name"/>
                                     </div>
                                 </div>
                                     <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="text" class="form-control" placeholder="Surname"/>
+                                        <input type="text" name = "lastName" id = "lastName" class="form-control" placeholder="Surname"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="text" class="form-control" placeholder="E-mail"/>
+                                        <input type="text" class="form-control" name = "emailAdd" id = "emailAdd" placeholder="E-mail"/>
                                     </div>
                                 </div>
 
@@ -52,12 +52,12 @@
                                                       
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="password" class="form-control" placeholder="Password"/>
+                                        <input type="password" class="form-control" name = "password" id = "password" placeholder="Password"/>
                                     </div>
                                 </div>                    
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="password" class="form-control" placeholder="Re-Password"/>
+                                        <input type="password" class="form-control" name = "confirmPassword" id = "confirmPassword" placeholder="Re-Password"/>
                                     </div>
                                 </div>             
 

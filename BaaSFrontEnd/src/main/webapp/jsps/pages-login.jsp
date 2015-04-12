@@ -24,15 +24,15 @@
                 <div class="login-logo"></div>
                 <div class="login-body">
                     <div class="login-title"><strong>Welcome</strong>, Please login</div>
-                    <form action="pages-applications.jsp" class="form-horizontal" method="post">
+                    <form action="../LoginPageServlet" class="form-horizontal" method="post">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Username"/>
+                            <input type="text" name="userName" id = "userName" class="form-control" placeholder="Username"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="Password"/>
+                            <input type="password" name = "password" id = "password" class="form-control" placeholder="Password"/>
                         </div>
                     </div>
                     <div class="form-group">
