@@ -37,7 +37,6 @@
 	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/jersey-core-1.7.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/jersey-server-1.7.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Prachi/Downloads/jsr311-api-1.1.jar"/>
-	<classpathentry kind="lib" path="F:/CMPE295B/AppCall 2/AppCall/WebContent/WEB-INF/lib/AppBaasClient.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/AppBaasClient.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jersey-client-1.9.1 (1).jar"/>
 	<classpathentry kind="output" path="target/classes"/>

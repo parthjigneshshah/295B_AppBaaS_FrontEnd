@@ -40,7 +40,7 @@ public class LoginPageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String uname = request.getParameter("uname");
+		String uname = request.getParameter("userName");
 		String password = request.getParameter("password");
 		
 		JSONObject jsonResponse = null;
@@ -56,7 +56,7 @@ try {
 			System.out.println("statusCosde"+statusCode);
 			if (statusCode.equals("200")){
 				
-				response.sendRedirect("jsps/pagesApplications.jsp");
+				response.sendRedirect("jsps/pages-applications.jsp");
 			}
 			
 			else{
