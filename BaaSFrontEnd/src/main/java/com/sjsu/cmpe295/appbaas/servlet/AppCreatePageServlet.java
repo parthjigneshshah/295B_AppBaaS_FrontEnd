@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.sjsu.cmpe295.appbaas.servicemanager.AppCreateServiceManager;
 
+import javax.servlet.http.HttpSession;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -52,9 +53,13 @@ public class AppCreatePageServlet extends HttpServlet {
 			String appType = request.getParameter("AppType");
 			String[] serviceNames = request.getParameterValues("ServiceName");
 			
+			HttpSession session = request.getSession();
+			String token = (String) session.getAttribute("sessionToken");
+			
+			System.out.println("session token is: "+token);
 			
 			AppCreateServiceManager acsm = new AppCreateServiceManager();
-			jsonResponse = acsm.createApp(appName, appDesc, appVer, appType, serviceNames);
+			jsonResponse = acsm.createApp(appName, appDesc, appVer, appType, serviceNames, token);
 			
 			System.out.println("this is response:   "+jsonResponse.toString());
 			

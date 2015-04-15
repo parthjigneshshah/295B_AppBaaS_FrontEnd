@@ -3,10 +3,12 @@ package com.sjsu.cmpe295.appbaas.servlet;
 import java.io.IOException;
 
 
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,9 +49,15 @@ public class LoginPageServlet extends HttpServlet {
 		
 		
 		LoginServiceManager lsm = new LoginServiceManager();
-		jsonResponse = lsm.loginUser(uname, password);
+		jsonResponse = lsm.loginUser(uname, password);		
 		
 try {
+			
+			String sessionToken = jsonResponse.getString("sessionToken").toString();
+			System.out.println(sessionToken);
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("sessionToken", sessionToken);
 			
 			JSONObject responseObj =  (JSONObject) jsonResponse.get("responseObject");
 			String statusCode = responseObj.get("code").toString();

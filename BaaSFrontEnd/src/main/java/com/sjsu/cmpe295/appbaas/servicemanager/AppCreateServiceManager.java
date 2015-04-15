@@ -17,7 +17,7 @@ public class AppCreateServiceManager {
 	}
 	
 	@SuppressWarnings("finally")
-	public JSONObject createApp(String appName, String appDesc, String AppVer, String appType, String serviceName[]){
+	public JSONObject createApp(String appName, String appDesc, String AppVer, String appType, String serviceName[], String token){
 		
 		int serviceNo = serviceName.length;
 		System.out.println(serviceNo);
@@ -43,10 +43,13 @@ public class AppCreateServiceManager {
 		}
 		jsonRequest.put("services", services);
 		
+		
+		
 		System.out.println(jsonRequest.toString());
 		
 		AppBaasClient appClient = new AppBaasClient();
 		appClient.HttpInit("POST","http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/AppManager/createApp");
+		appClient.addHeader("sessionToken",token);
 		jsonResponse = appClient.execute(jsonRequest.toString());
 		
 		System.out.println(jsonResponse.toString());
