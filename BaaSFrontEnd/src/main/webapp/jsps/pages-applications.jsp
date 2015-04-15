@@ -24,20 +24,10 @@
                             
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <p>Use search to find applications. You can search by: name, address, phone. Or use the advanced search.</p>
-                                    <form class="form-horizontal">
+                                    <p>Create a new application by clicking the create application button below.</p>
+                                    <form class="form-horizontal" action = "pages-create-application.jsp">
                                         <div class="form-group">
-                                            <div class="col-md-8">
-                                                <div class="input-group">
-                                                    <div class="input-group-addon">
-                                                        <span class="fa fa-search"></span>
-                                                    </div>
-                                                    <input type="text" class="form-control" placeholder="Search your Applications..."/>
-                                                    <div class="input-group-btn">
-                                                        <button class="btn btn-primary">Search</button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="col-md-4">
                                                 <button class="btn btn-success btn-block"><span class="fa fa-plus"></span> Create new application</button>
                                             </div>

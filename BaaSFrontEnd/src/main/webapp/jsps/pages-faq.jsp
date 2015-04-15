@@ -32,7 +32,7 @@
     <body>
         <!-- START PAGE CONTAINER -->
         <div class="page-container" style = "background: none repeat scroll 0 0 #f5f5f5;">
-         <%@ include file= "header.jsp" %>
+         <%@ include file= "HomePageHeader.jsp" %>
             <!-- START PAGE SIDEBAR -->
              
             <!-- END PAGE SIDEBAR -->

@@ -24,10 +24,7 @@
                 <div class="registration-body" align="center">
                     
                     <div class="row" align="center">                        
-                      
-                       
-                            
-                            <div class="registration-title" align="center"><strong>Registration</strong>, use form below</div>
+  		              <div class="registration-title" align="center"><strong>Registration</strong>, use form below</div>
                            
                             <form action="../RegistrationPageServlet" class="form-horizontal" method="post">
 

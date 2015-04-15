@@ -16,30 +16,46 @@ public class AppCreateServiceManager {
 		
 	}
 	
-	@SuppressWarnings("finally")
-	public JSONObject createApplication(String appName,String appDesc,String[] services,String appVersion,String appType){
-	
-		try {
-				jsonRequest.put("appName", appName);
-				jsonRequest.put("appDesc", appDesc);
-				jsonRequest.put("services",services);
-				jsonRequest.put("appVersion", appVersion);
-				jsonRequest.put("appType", appType);
-			AppBaasClient appClient= new AppBaasClient();
-			appClient.HttpInit("POST", " http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/AppManager/createApp");
-			jsonResponse=appClient.execute(jsonRequest.toString());
-			
-			return jsonResponse;
-			
-			
-		} catch (JSONException e) {
-			System.out.println("In the catch block of AppCreateServiceManager");
-			e.printStackTrace();
-		}
+	public JSONObject createApp(String appName, String appDesc, String AppVer, String appType, String serviceName[]){
 		
+		int serviceNo = serviceName.length;
+		System.out.println(serviceNo);
+		JSONObject[] services = new JSONObject[serviceNo];
+		System.out.println(services.length);
+		
+		try{
+		
+			System.out.println("in the ascm object");
+			
+		jsonRequest.put("appName", appName);
+		jsonRequest.put("appVersion", AppVer);
+		jsonRequest.put("appType", appType);
+		jsonRequest.put("appDesc", appDesc);
+		int i;
+		for (i = 0; i < serviceNo; i++){
+			
+				System.out.println("in for");
+				String serviceN = serviceName[i];
+				System.out.println(serviceN);
+				services[i].put("service_name", serviceN);		
+		}
+		jsonRequest.put("services", services);
+		
+		
+		System.out.println(jsonRequest.toString());
+		
+		System.out.println("after printing json object");
+		
+		return jsonRequest;
+		}
+		catch(JSONException e){
+			
+			e.getStackTrace();
+			
+		}
 		finally{
-			return jsonResponse;
+			return jsonRequest;
 		}
+	}
 		
-}
 }
