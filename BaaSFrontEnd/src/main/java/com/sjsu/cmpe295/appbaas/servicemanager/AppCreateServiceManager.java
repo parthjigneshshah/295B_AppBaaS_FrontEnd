@@ -16,6 +16,7 @@ public class AppCreateServiceManager {
 		
 	}
 	
+	@SuppressWarnings("finally")
 	public JSONObject createApp(String appName, String appDesc, String AppVer, String appType, String serviceName[]){
 		
 		int serviceNo = serviceName.length;
@@ -31,22 +32,30 @@ public class AppCreateServiceManager {
 		jsonRequest.put("appVersion", AppVer);
 		jsonRequest.put("appType", appType);
 		jsonRequest.put("appDesc", appDesc);
-		int i;
-		for (i = 0; i < serviceNo; i++){
+		
+		for (int i = 0; i < serviceNo; i++){
 			
 				System.out.println("in for");
 				String serviceN = serviceName[i];
 				System.out.println(serviceN);
+				services[i] = new JSONObject();
 				services[i].put("service_name", serviceN);		
 		}
 		jsonRequest.put("services", services);
 		
-		
 		System.out.println(jsonRequest.toString());
 		
-		System.out.println("after printing json object");
+		AppBaasClient appClient = new AppBaasClient();
+		appClient.HttpInit("POST","http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/AppManager/createApp");
+		jsonResponse = appClient.execute(jsonRequest.toString());
 		
-		return jsonRequest;
+		System.out.println(jsonResponse.toString());
+		
+		return jsonResponse;
+		
+		
+		
+		
 		}
 		catch(JSONException e){
 			
@@ -54,7 +63,7 @@ public class AppCreateServiceManager {
 			
 		}
 		finally{
-			return jsonRequest;
+			return jsonResponse;
 		}
 	}
 		

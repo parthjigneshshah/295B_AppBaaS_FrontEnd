@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -51,11 +52,34 @@ public class AppCreatePageServlet extends HttpServlet {
 			String appType = request.getParameter("AppType");
 			String[] serviceNames = request.getParameterValues("ServiceName");
 			
+			
 			AppCreateServiceManager acsm = new AppCreateServiceManager();
 			jsonResponse = acsm.createApp(appName, appDesc, appVer, appType, serviceNames);
 			
+			System.out.println("this is response:   "+jsonResponse.toString());
+			
+			try {
+				
+				JSONObject responseObj =  (JSONObject) jsonResponse.get("responseObject");
+				String statusCode = responseObj.get("code").toString();
+				System.out.println("statusCosde"+statusCode);
+				if (statusCode.equals("200")){
+					
+					response.sendRedirect("jsps/pages-applications.jsp");
+				}
+				
+				else{
+				response.sendRedirect("jsps/pages-error.jsp");	
+				}
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+			
+			
 		}
-		response.sendRedirect("jsps/pages-create-application.jsp");
+			
+		}
+		
+		
 	
 	}
 

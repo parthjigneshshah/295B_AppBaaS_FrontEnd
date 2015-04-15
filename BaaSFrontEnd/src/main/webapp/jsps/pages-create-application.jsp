@@ -22,7 +22,7 @@
            		               <div class="row">
                         <div class="col-md-12">
                             
-                            <form class="form-horizontal" action = "pages-success.jsp" method = "post" >
+                            <form class="form-horizontal" action = "../AppCreatePageServlet" method = "post" >
                             <input type = "hidden" name = "action" value = "createApplication">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
