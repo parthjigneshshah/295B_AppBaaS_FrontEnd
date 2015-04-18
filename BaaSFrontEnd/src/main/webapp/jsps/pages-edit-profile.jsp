@@ -35,43 +35,54 @@
                                 <div class="panel-body">                                                                        
                                     
                                     <div class="form-group">
-                                        <label class="col-md-3 col-xs-12 control-label">User Name</label>
+                                        <label class="col-md-3 col-xs-12 control-label">First Name</label>
                                         <div class="col-md-6 col-xs-12">                                            
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                <input type="text" class="form-control" name = "AppName" id = "AppName"/>
+                                                <input type="text" class="form-control" style = "color:#000000" name = "firstName" id = "firstName" value = <%= session.getAttribute("fName")  %> disabled="disabled"/>
                                             </div>                                                                                      
                                         </div>
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label class="col-md-3 col-xs-12 control-label">User Password</label>
-                                        <div class="col-md-6 col-xs-12">                                            
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><a href = "pages-forgot-password.jsp" ><span class="fa fa-pencil"></span></a></span>
-                                                <input type="text" class="form-control" name = "AppDesc"/>
-                                            </div>                                                                                        
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label class="col-md-3 col-xs-12 control-label">User Application Info</label>
+                                        <label class="col-md-3 col-xs-12 control-label">Last Name</label>
                                         <div class="col-md-6 col-xs-12">                                            
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                <input type="text" class="form-control" name = "AppVer"/>
+                                                <input type="text" class="form-control" style = "color:#000000" name = "lastName" id = "lastName" value = <%= session.getAttribute("lName")  %> disabled="disabled"/>
+                                            </div>                                                                                      
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Email Id</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <input type="text" class="form-control" style = "color:#000000" name = "email" id = "email" value = <%= session.getAttribute("email") %> disabled="disabled"/>
                                             </div>                                                                                       
                                         </div>
                                     </div>
+ 
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label"> Password </label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <input type="password" class="form-control" style = "color:#000000" name = "password" id = "password" value = <%= session.getAttribute("password") %> disabled="disabled"/>
+                                            	  
+                                            </div>
+                                              <a href = "pages-change-password.jsp" >Change Password</a>                                                                                      
+                                        </div>
+                                    </div>
+                                    
+                                    
                                     
                                     
                                     </div>
 
                                 </div>
-                                <div class="panel-footer">
-                                    <button class="btn btn-default">Clear Form</button>                                    
-                                    <button class="btn btn-primary pull-right">Submit</button>
-                                </div>
+                                
                             </div>
                             </form>
                             

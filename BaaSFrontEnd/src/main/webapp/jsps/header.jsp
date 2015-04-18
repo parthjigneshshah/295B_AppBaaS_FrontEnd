@@ -26,7 +26,7 @@
                     <!-- END POWER OFF -->                    
 					<!--  edit profile  -->                   
                      <li class="xn-icon-button pull-right">
-                        <a href="pages-edit-profile.jsp"><span>Edit Profile</span></a>
+                        <a href="../UserDetailServlet"><span>Edit Profile</span></a>
                         <a href="pages-documentation.jsp"><span>Documentation</span></a>
                      </li>
                     <!-- end of edit profile -->

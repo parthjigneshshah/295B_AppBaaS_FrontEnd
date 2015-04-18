@@ -2,8 +2,6 @@ package com.sjsu.cmpe295.appbaas.servlet;
 
 import java.io.IOException;
 
-
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,18 +11,18 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.sjsu.cmpe295.appbaas.servicemanager.*;
+import com.sjsu.cmpe295.appbaas.servicemanager.UpdateUserDetailServiceManager;
 
 /**
- * Servlet implementation class LoginPageServlet
+ * Servlet implementation class UpdatePasswordServlet
  */
-public class LoginPageServlet extends HttpServlet {
+public class UpdatePasswordServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginPageServlet() {
+    public UpdatePasswordServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,41 +40,30 @@ public class LoginPageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String uname = request.getParameter("userName");
-		String password = request.getParameter("password");
 		
 		JSONObject jsonResponse = null;
 		
+		String password = request.getParameter("password");
+		HttpSession session = request.getSession();
+		String sessionToken = (String) session.getAttribute("sessionToken");
 		
-		LoginServiceManager lsm = new LoginServiceManager();
-		jsonResponse = lsm.loginUser(uname, password);		
+		UpdateUserDetailServiceManager uudsm = new UpdateUserDetailServiceManager();
+		jsonResponse = uudsm.updateUserDetail(password, sessionToken);
 		
-try {
-			
-			String sessionToken = jsonResponse.getString("sessionToken").toString();
-			System.out.println(sessionToken);
-			
-			HttpSession session = request.getSession();
-			session.setAttribute("sessionToken", sessionToken);
-			
-			JSONObject responseObj =  (JSONObject) jsonResponse.get("responseObject");
-			String statusCode = responseObj.get("code").toString();
-			System.out.println("statusCosde"+statusCode);
-			if (statusCode.equals("200")){
-				
-				response.sendRedirect("GetApplicationServlet");
+		try {
+			String statusCode = jsonResponse.getString("code");
+			if(statusCode.equals("200")){
+				response.sendRedirect("jsps/pages-password-success.jsp");
 			}
 			
-			else{
-			response.sendRedirect("jsps/pages-error.jsp");	
-			}
+			else{response.sendRedirect("jsps/pages-error.jsp");}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		
 	}
-		
-		
-	}
-
 }
+

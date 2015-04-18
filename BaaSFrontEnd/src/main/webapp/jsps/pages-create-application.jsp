@@ -79,10 +79,10 @@
                                     <div class="form-group">
                                         <label class="col-md-3 col-xs-12 control-label">Services</label>
                                         <div class="col-md-6 col-xs-12">                                                                                                                                        
-                                            <label class="check"><input type="checkbox" name = "ServiceName" id = "userService" value = "User Manager"class="icheckbox" /> User Manager</label><br/>
-                                            <label class="check"><input type="checkbox" name = "ServiceName" value ="Application Manager" class="icheckbox" /> Application Manager</label><br/>
-                                            <label class="check"><input type="checkbox" name = "ServiceName" value = "Object Manager" class="icheckbox" /> Object Manager</label><br/>
-                                            <label class="check"><input type="checkbox" name = "ServiceName" value = "Notification Manager" class="icheckbox" /> Notification Manager</label>
+                                            <label class="check"><input type="checkbox" name = "ServiceName" id = "userService" value = "UserManager"class="icheckbox" /> User Manager</label><br/>
+                                            <label class="check"><input type="checkbox" name = "ServiceName" value ="AppManager" class="icheckbox" /> Application Manager</label><br/>
+                                            <label class="check"><input type="checkbox" name = "ServiceName" value = "ObjManager" class="icheckbox" /> Object Manager</label><br/>
+                                            <label class="check"><input type="checkbox" name = "ServiceName" value = "NotificationManager" class="icheckbox" /> Notification Manager</label>
                                         </div>
                                     </div>
 

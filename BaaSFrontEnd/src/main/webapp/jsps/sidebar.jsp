@@ -40,20 +40,12 @@
                     </li>
                     <li class="xn-title">Navigation</li>
                     <li class="active">
-                        <a href="indexSample.jsp"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
-                    </li>                    
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Pages</span></a>
-                        <ul>
-                           
-                            <li><a href="pages-sample.jsp"><span class="fa fa-wrench"></span> Edit Profile</a></li>
-                            <li><a href="pages-sample.jsp"><span class="fa fa-user"></span> Profile</a></li>
-                            <li><a href="pages-sample.jsp"><span class="fa fa-users"></span> My Applications</a></li>
-                            <li><a href="pages-sample.jsp"><span class="fa fa-edit"></span> Tasks</a></li>
-                            <li><a href="pages-sample.jsp"><span class="fa fa-question"></span> Forgot Password</a><div class="informer informer-danger">New!</div></li>                            
-                                                   
-                        </ul>
-                    </li>
+                        <a href="../GetApplicationServlet"><span class="fa fa-desktop"></span> <span class="xn-text">Applications</span></a>                        
+                    </li>                
+                    <li><a href="pages-edit-profile.jsp"><span class="fa fa-pencil"></span> Edit Profile</a></li>
+                    <li><a href="pages-edit-profile.jsp"><span class="fa fa-user"></span> Profile</a></li>               
+                    <li><a href="pages-forgot-password.jsp"><span class="fa fa-question"></span> Forgot Password</a><div class="informer informer-danger">New!</div></li>    
+                    
                    
                                    
 

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import = "org.json.JSONException" %>
+<%@ page import = "org.json.JSONObject" %>
+<%@ page import = "org.json.JSONArray" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>        
@@ -40,7 +43,23 @@
                     </div>
                     
                        <div class="row">
-                        <div class="col-md-3">
+                       <%
+                       		JSONObject jsonResponse = (JSONObject) session.getAttribute("applicationsJson");
+                       		JSONArray jsonApp = new JSONArray();
+                       		
+                       		try{
+                       		jsonApp = jsonResponse.getJSONArray("applications");
+							int no_of_app = jsonApp.length();
+                       		
+                       		for(int i = 0; i < no_of_app ; i++){
+                       		JSONObject app = new JSONObject();
+                       		app = jsonApp.getJSONObject(i);
+                       		JSONArray appServices = new JSONArray();
+                       		appServices = app.getJSONArray("services");
+                       		int no_of_services = appServices.length();
+                       		%>
+                       		
+                       		<div class="col-md-4">
                             <!-- CONTACT ITEM -->
                             <div class="panel panel-default">
                                 <div class="panel-body profile">
@@ -48,51 +67,42 @@
                                         <img src="../assets/images/users/no-image.jpg" alt="Nadia Ali"/>
                                     </div>
                                     <div class="profile-data">
-                                        <div class="profile-data-name">Application 1</div>
-                                        <div class="profile-data-title">Catagory </div>
+                                        <div class="profile-data-name">Name: <%= app.getString("appName")  %></div>
+                                        <div class="profile-data-title">Version: <%= app.getString("appVersion") %> </div>
+                                        <div class="profile-data-title">Type: <%= app.getString("appType") %> </div>
                                     </div>
-                                    <div class="profile-controls">
-                                        <a href="sample.jsp" class="profile-control-left"><span class="fa fa-info"></span></a>
-                                       
-                                    </div>
+                                    
                                 </div>                                
-                                <div class="panel-body">                                    
+                                <div class="panel-body" style = "font-size: 13px">                                    
                                     <div class="contact-info">
-                                        <p><small>Mobile</small><br/>(555) 555-55-55</p>
-                                        <p><small>Email</small><br/>nadiaali@domain.com</p>
-                                        <p><small>Address</small><br/>123 45 Street San Francisco, CA, USA</p>                                   
-                                    </div>
-                                </div>                                
-                            </div>
-                            <!-- END CONTACT ITEM -->
-                        </div>
-                        <div class="col-md-3">
-                            <!-- CONTACT ITEM -->
-                            <div class="panel panel-default">
-                                <div class="panel-body profile">
-                                    <div class="profile-image">
-                                        <img src="../assets/images/users/no-image.jpg" alt="Dmitry Ivaniuk"/>
-                                    </div>
-                                    <div class="profile-data">
-                                        <div class="profile-data-name">Application 2</div>
-                                        <div class="profile-data-title">Catagory </div>
-                                    </div>
-                                    <div class="profile-controls">
-                                        <a href="sample.jsp" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                    
+                                        <p><small>Description</small><br/><%=app.getString("appDesc") %></p>
+                                        <%for(int j = 0; j < no_of_services; j++){
+                                        	JSONObject service = new JSONObject();
+                                        	service = appServices.getJSONObject(j);
+                                         %>
                                         
-                                    </div>
-                                </div>                                
-                                <div class="panel-body">                                    
-                                    <div class="contact-info">
-                                        <p><small>Mobile</small><br/>(333) 333-33-22</p>
-                                        <p><small>Email</small><br/>dmitry@domain.com</p>                                        
-                                        <p><small>Address</small><br/>123 45 Street San Francisco, CA, USA</p>                                   
+                                        
+                                        <p><small>Service:</small><br/><%= service.getString("service_name").toString() %></p><%} %>
+                                        <p><small>App Key*:</small><br/><%= app.getString("appKey").toString() %></p>
+                                        
+                                                                  
                                     </div>
                                 </div>                                
                             </div>
                             <!-- END CONTACT ITEM -->
                         </div>
-                                          
+                       		
+                       		<% }
+                       		}
+                       		catch(JSONException e){
+                       			e.getStackTrace();
+                       		}
+                       		%>
+                       
+                       
+                   
+                                
                     </div>
                      <div class="row">
                         <div class="col-md-12">

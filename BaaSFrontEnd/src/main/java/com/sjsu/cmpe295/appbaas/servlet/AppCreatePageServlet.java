@@ -70,7 +70,7 @@ public class AppCreatePageServlet extends HttpServlet {
 				System.out.println("statusCosde"+statusCode);
 				if (statusCode.equals("200")){
 					
-					response.sendRedirect("jsps/pages-applications.jsp");
+					response.sendRedirect("jsps/pages-success.jsp");
 				}
 				
 				else{

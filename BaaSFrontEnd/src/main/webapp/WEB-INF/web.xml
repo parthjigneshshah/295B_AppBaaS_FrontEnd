@@ -23,6 +23,36 @@
   	<description></description>
   	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.AppCreatePageServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UserDetailServlet</servlet-name>
+  	<display-name>UserDetailServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.UserDetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdateUserDetail</servlet-name>
+  	<display-name>UpdateUserDetail</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.UpdateUserDetail</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdatePasswordServlet</servlet-name>
+  	<display-name>UpdatePasswordServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.UpdatePasswordServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<display-name>LogoutServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetApplicationServlet</servlet-name>
+  	<display-name>GetApplicationServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.GetApplicationServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>RegistrationPageServlet</servlet-name>
@@ -35,5 +65,25 @@
   <servlet-mapping>
   	<servlet-name>AppCreatePageServlet</servlet-name>
   	<url-pattern>/AppCreatePageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserDetailServlet</servlet-name>
+  	<url-pattern>/UserDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateUserDetail</servlet-name>
+  	<url-pattern>/UpdateUserDetail</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdatePasswordServlet</servlet-name>
+  	<url-pattern>/UpdatePasswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetApplicationServlet</servlet-name>
+  	<url-pattern>/GetApplicationServlet</url-pattern>
   </servlet-mapping>
 </web-app>
