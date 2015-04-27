@@ -24,16 +24,16 @@
                     </li>
                     <li class="xn-title">Navigation</li>
                     <li class="active">
-                        <a href="indexSample.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">User Manager</span></a>                        
+                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">User Manager</span></a>                        
                     </li>                    
                    <li>
-                        <a href="indexSample.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Application Manager</span></a>                        
+                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Application Manager</span></a>                        
                     </li>  
                     <li>
-                        <a href="indexSample.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Notification Manager</span></a>                        
+                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Notification Manager</span></a>                        
                     </li>  
                     <li>
-                        <a href="indexSample.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Object Manager</span></a>                        
+                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Object Manager</span></a>                        
                     </li>  
                    
                                    

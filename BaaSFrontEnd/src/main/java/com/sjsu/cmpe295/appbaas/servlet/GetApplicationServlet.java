@@ -84,6 +84,9 @@ public class GetApplicationServlet extends HttpServlet {
 			else if(code.equals("1008")){
 				response.sendRedirect("jsps/pages-no-application.jsp");
 			}
+			else if(code.equals("1010")){
+				response.sendRedirect("jsps/pages-no-application.jsp");
+			}
 			
 			
 		} catch (JSONException e) {

@@ -1,33 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en" class="body-full-height">
+<html lang="en">
     <head>        
-        <!-- META SECTION -->
-        <title>AppBaaS</title>            
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
-        <!-- END META SECTION -->
-        
-        <!-- CSS INCLUDE -->        
-        <link rel="stylesheet" type="text/css" id="theme" href="../css/theme-default.css"/>
-        <!-- EOF CSS INCLUDE -->    
+        <%@include file = "metaAndCss.jsp" %>  
     </head>
     <body>
-        
-         
-       <div class="login-container">
-        
-            <div class="login-box animated fadeInDown">
-                <div class="login-logo"></div>
-                <div class="login-body">
-                    <div class="login-title"><strong>Forgot</strong> Password?</div>
-                    <form action="../UpdatePasswordServlet" class="form-horizontal" method="post">
-                    <h4>Your E-mail</h4>
-                    <div class="form-group">
+        <!-- START PAGE CONTAINER -->
+        <div class="page-container">
+            <!-- START PAGE SIDEBAR -->
+               <%@ include file= "sidebar.jsp" %>
+            <!-- END PAGE SIDEBAR -->
+            <!-- PAGE CONTENT -->
+            <div class="page-content">
+                
+               <%@ include file= "header.jsp" %>
+                 <!-- PAGE CONTENT WRAPPER -->
+                <div class="page-content-wrap">
+                
+                <div class="panel panel-primary animated zoomIn xn-drop-left">
+                <div class="panel-heading">
+                   <h3 class="panel-title"><strong>Change Password</strong></h3>                                                                
+                    </div>
+                            <div class="panel-body">
+                                
+                                <div class="login-container login-v2 login-inside">
+            
+                                    <div class="login-box animated fadeInDown">
+                                        <div class="login-body">
+                                             <form action="../UpdatePasswordServlet" class="form-horizontal" method="post">
+                                             <div class="form-group">
                         <div class="col-md-12">
                             <input type="password" name = "password" id = "password" class="form-control" placeholder="New Password"/>
                         </div>
@@ -43,18 +45,25 @@
                             <button class="btn btn-danger btn-block">Change Password</button>
                         </div>
                     </div>
-                    </form>
+                                            </form>
+                                        </div>                                        
+                                    </div>
+
+                                </div>
+                                
+                            </div>                                 
+                        </div>  
+                   
+                    <!-- END LOGIN BLOCK --> 
+                
                 </div>
-                <%@ include file= "footer.jsp" %>
-            </div>
-            
+                <!-- END PAGE CONTENT WRAPPER -->                
+            </div>            
+            <!-- END PAGE CONTENT -->
         </div>
-        
+        <!-- END PAGE CONTAINER -->
+
+       <%@ include file = "MessageBoxAndPreloads.jsp" %>           
+       <%@ include file = "scripts.jsp" %>     
     </body>
 </html>
-
-
-
-
-
-

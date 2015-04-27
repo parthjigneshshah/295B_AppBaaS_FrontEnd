@@ -85,6 +85,7 @@
                                             <label class="check"><input type="checkbox" name = "ServiceName" value = "NotificationManager" class="icheckbox" /> Notification Manager</label>
                                         </div>
                                     </div>
+                                     
 
                                 </div>
                                 <div class="panel-footer">

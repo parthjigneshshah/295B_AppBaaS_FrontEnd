@@ -13,7 +13,7 @@
         <link rel="icon" href="../favicon.ico" type="image/x-icon" />
         <!-- END META SECTION -->
         
-        <!-- CSS INCLUDE -->        
+        <!-- CSS INCLUDE -->        	
         <link rel="stylesheet" type="text/css" id="theme" href="../css/theme-default.css"/>
         <!-- EOF CSS INCLUDE -->    
     </head>
@@ -31,7 +31,7 @@
                         <div class="col-md-12">
                             <input type="text" name="userName" id = "userName" class="form-control" placeholder="Username"/>
                         </div>
-                    </div>
+                    </div>	
                     <div class="form-group">
                         <div class="col-md-12">
                             <input type="password" name = "password" id = "password" class="form-control" placeholder="Password"/>
@@ -48,6 +48,7 @@
                     </form>
                 </div>
                 <%@ include file= "footer.jsp" %>
+                
             </div>
             
         </div>

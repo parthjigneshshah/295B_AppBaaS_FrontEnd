@@ -26,7 +26,8 @@ public class UpdateUserDetailServiceManager {
 		appClient.HttpInit("PUT","http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/UserManager/updateUser");
 		appClient.addHeader("sessionToken",sessionToken);
 		jsonResponse = appClient.execute(jsonRequest.toString());
-		return jsonRequest;
+		System.out.println("jsonResponse is: "+jsonResponse.toString());
+		return jsonResponse;
 		}
 		catch(JSONException e){
 			e.getStackTrace();

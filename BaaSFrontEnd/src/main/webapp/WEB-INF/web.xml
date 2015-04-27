@@ -59,6 +59,36 @@
   	<description></description>
   	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.CreateTabelServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UtilityServlet</servlet-name>
+  	<display-name>UtilityServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.UtilityServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetCreatedTableListServlet</servlet-name>
+  	<display-name>GetCreatedTableListServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.GetCreatedTableListServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetTableDetailsServlet</servlet-name>
+  	<display-name>GetTableDetailsServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.GetTableDetailsServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SendNotificationServlet</servlet-name>
+  	<display-name>SendNotificationServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.SendNotificationServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AnalyticsServlet</servlet-name>
+  	<display-name>AnalyticsServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.AnalyticsServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>RegistrationPageServlet</servlet-name>
@@ -95,5 +125,25 @@
   <servlet-mapping>
   	<servlet-name>CreateTabelServlet</servlet-name>
   	<url-pattern>/CreateTabelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UtilityServlet</servlet-name>
+  	<url-pattern>/UtilityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetCreatedTableListServlet</servlet-name>
+  	<url-pattern>/GetCreatedTableListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetTableDetailsServlet</servlet-name>
+  	<url-pattern>/GetTableDetailsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SendNotificationServlet</servlet-name>
+  	<url-pattern>/SendNotificationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AnalyticsServlet</servlet-name>
+  	<url-pattern>/AnalyticsServlet</url-pattern>
   </servlet-mapping>
 </web-app>

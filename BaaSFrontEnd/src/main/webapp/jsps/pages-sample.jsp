@@ -19,7 +19,12 @@
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-           
+           		<div class="panel-heading">
+                                    <h3 class="panel-title"><strong>User Profile</strong></h3>
+                                    <ul class="panel-controls">
+                                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                    </ul>
+                                </div>
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->                
             </div>            

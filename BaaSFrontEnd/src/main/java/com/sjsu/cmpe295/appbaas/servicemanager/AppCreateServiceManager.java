@@ -1,5 +1,6 @@
 package com.sjsu.cmpe295.appbaas.servicemanager;
 
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,6 +11,7 @@ public class AppCreateServiceManager {
 
 	JSONObject jsonResponse=null;
 	JSONObject jsonRequest= new JSONObject();
+	
 
 	public AppCreateServiceManager()
 	{
@@ -26,7 +28,7 @@ public class AppCreateServiceManager {
 		
 		try{
 		
-			System.out.println("in the ascm object");
+		System.out.println("in the ascm object");
 			
 		jsonRequest.put("appName", appName);
 		jsonRequest.put("appVersion", AppVer);
@@ -42,9 +44,7 @@ public class AppCreateServiceManager {
 				services[i].put("service_name", serviceN);		
 		}
 		jsonRequest.put("services", services);
-		
-		
-		
+
 		System.out.println(jsonRequest.toString());
 		
 		AppBaasClient appClient = new AppBaasClient();
@@ -55,10 +55,7 @@ public class AppCreateServiceManager {
 		System.out.println(jsonResponse.toString());
 		
 		return jsonResponse;
-		
-		
-		
-		
+				
 		}
 		catch(JSONException e){
 			

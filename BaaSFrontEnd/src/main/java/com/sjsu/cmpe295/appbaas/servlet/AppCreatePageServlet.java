@@ -67,6 +67,8 @@ public class AppCreatePageServlet extends HttpServlet {
 				
 				JSONObject responseObj =  (JSONObject) jsonResponse.get("responseObject");
 				String statusCode = responseObj.get("code").toString();
+				String appKey = jsonResponse.getString("appKey");
+				session.setAttribute("appKey", appKey);
 				System.out.println("statusCosde"+statusCode);
 				if (statusCode.equals("200")){
 					

@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
+
+import com.sjsu.cmpe295.appbaas.servicemanager.CreateTableServiceManager;
+import com.sun.jersey.api.client.RequestWriter;
+
 /**
  * Servlet implementation class CreateTabelServlet
  */
@@ -33,33 +38,74 @@ public class CreateTabelServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("null")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		JSONObject jsonResponse = null; 
 		int counter = Integer.parseInt(request.getParameter("counter"));
+		int pkColumn = Integer.parseInt(request.getParameter("check"));
+		int colCounter = 0;
 		String tableName = request.getParameter("tableName");
+		
 		System.out.println("no of columns are: "+counter);
+		System.out.println("PK Col: " + pkColumn);
 		HttpSession session = request.getSession();
-		
-		
-		
-		String fieldArray[] = new String[counter];
-		
-		for(int i = 1; i <= counter; i++){
-			
-			fieldArray[i-1] = request.getParameter("ColName"+i);
-			System.out.println("columnName: "+fieldArray[i-1]);
-			session.setAttribute("columnName"+i, fieldArray[i-1]);
-		}
-		
-		for(int j = 0; j < fieldArray.length; j++)
-		System.out.println(fieldArray[j]);
-		
-		session.setAttribute("fieldCounter", counter);
+		int pkPointer = 0;
+		String sessionToken = (String) session.getAttribute("sessionToken");
+		String appKey = (String) session.getAttribute("appKey");
 		session.setAttribute("tableName", tableName);
 		
+		System.out.println("this is checked:"+request.getParameter("Name1"));
 		
-		response.sendRedirect("jsps/pages-show-tables.jsp");
-	}
+		String colNameArray[] = new String[counter];
+		String colTypeArray[] = new String[counter];
+		String pkArray[] = new String [counter];
+		
+		
+		
+		for(int i = 1; i <= counter; i++){
+			String colName = request.getParameter("ColName"+i);
+			String colType = request.getParameter("DataType"+i);
+			String x = request.getParameter("PrimaryKey"+i);
+			
+			if(colName != null && colType != null){
+				
+				colCounter++;
+				colNameArray[i-1] = colName;
+				System.out.println(colNameArray[i-1]);
+				
+				colTypeArray[i-1] = colType;
+				System.out.println(colTypeArray[i-1]);
+				pkArray[i-1] = x;
+				System.out.println("PRIMARYKEYaRRAY"+pkArray[i-1]);
+				
+			}
+		}
+		
+		for(int r = 1; r <= pkArray.length; r++){
+			
+			if(pkArray[r-1] != null){
+				pkPointer = r;
+				break;
+			}
+			
+		}
+		
+		System.out.println("primary key at columnNo"+pkPointer);
+		System.out.println("length of col counter"+colNameArray.length);
+		
+		
+		System.out.println("no of cols: "+colCounter);
+		session.setAttribute("columnCounter", colCounter);
+		session.setAttribute("tableName", tableName);
+		
+		CreateTableServiceManager ctsm = new CreateTableServiceManager();
+		jsonResponse = ctsm.createTable(appKey, sessionToken, colNameArray,colTypeArray, pkPointer, tableName);
+		
+		
+		response.sendRedirect("jsps/pages-success-table.jsp");
+	
 
+}
 }

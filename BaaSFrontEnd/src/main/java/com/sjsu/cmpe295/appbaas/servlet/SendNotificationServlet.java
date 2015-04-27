@@ -11,18 +11,18 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.sjsu.cmpe295.appbaas.servicemanager.UpdateUserDetailServiceManager;
+import com.sjsu.cmpe295.appbaas.servicemanager.NotificationServiceManager;
 
 /**
- * Servlet implementation class UpdatePasswordServlet
+ * Servlet implementation class SendNotificationServlet
  */
-public class UpdatePasswordServlet extends HttpServlet {
+public class SendNotificationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdatePasswordServlet() {
+    public SendNotificationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,6 +32,30 @@ public class UpdatePasswordServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		JSONObject jsonResponse = null;
+		String notificationText = (String) request.getParameter("notificationText");
+		System.out.println("notificationText");
+		HttpSession session = request.getSession();
+		String sessionToken = (String) session.getAttribute("sessionToken");
+		String appKey = (String) session.getAttribute("appKey");
+		
+		NotificationServiceManager nsm = new NotificationServiceManager();
+		jsonResponse = nsm.sendNotification(sessionToken, appKey, notificationText);
+		System.out.println("this is response "+jsonResponse.toString());
+		try {
+			String code = jsonResponse.getString("code");
+			if(code.equals("200")){
+				
+				response.sendRedirect("jsps/pages-success-notification.jsp");
+				
+			}
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	/**
@@ -39,31 +63,6 @@ public class UpdatePasswordServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		
-		JSONObject jsonResponse = null;
-		
-		String password = request.getParameter("password");
-		HttpSession session = request.getSession();
-		String sessionToken = (String) session.getAttribute("sessionToken");
-		System.out.println("password: "+password+" sessionToken: "+sessionToken);
-		UpdateUserDetailServiceManager uudsm = new UpdateUserDetailServiceManager();
-		jsonResponse = uudsm.updateUserDetail(password, sessionToken);
-		
-		try {
-			String statusCode = jsonResponse.getString("code");
-			if(statusCode.equals("200")){
-				response.sendRedirect("jsps/pages-password-success.jsp");
-			}
-			
-			else{response.sendRedirect("jsps/pages-error.jsp");}
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		
 	}
-}
 
+}

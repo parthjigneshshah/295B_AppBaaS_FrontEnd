@@ -31,7 +31,7 @@
                             <div class="profile-data">
                                 <div class="profile-data-name">User 1</div>
                                 <div class="profile-data-title">Title</div>
-                            </div>
+                            </div>	
                             <div class="profile-controls">
                                 <a href=# class="profile-control-left"><span class="fa fa-info"></span></a>
                                 <a href=# class="profile-control-right"><span class="fa fa-envelope"></span></a>
@@ -42,9 +42,9 @@
                     <li class="active">
                         <a href="../GetApplicationServlet"><span class="fa fa-desktop"></span> <span class="xn-text">Applications</span></a>                        
                     </li>                
-                    <li><a href="pages-edit-profile.jsp"><span class="fa fa-pencil"></span> Edit Profile</a></li>
-                    <li><a href="pages-edit-profile.jsp"><span class="fa fa-user"></span> Profile</a></li>               
-                    <li><a href="pages-forgot-password.jsp"><span class="fa fa-question"></span> Forgot Password</a><div class="informer informer-danger">New!</div></li>    
+                    <li><a href="../UserDetailServlet"><span class="fa fa-pencil"></span> Edit Profile</a></li>
+                    <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>               
+                    <li><a href="pages-subscribe.jsp"><span class="fa fa-question"></span>Subscribe</a></li>    
                     
                    
                                    
