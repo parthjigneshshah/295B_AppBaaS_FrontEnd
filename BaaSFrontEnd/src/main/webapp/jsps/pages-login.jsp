@@ -1,4 +1,4 @@
-
+	
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -20,7 +20,6 @@
     <body>
         
         <div class="login-container">
-        
             <div class="login-box animated fadeInDown">
                 <div class="login-logo"></div>
                 <div class="login-body">

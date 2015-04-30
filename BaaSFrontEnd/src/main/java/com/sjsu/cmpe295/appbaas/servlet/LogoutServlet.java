@@ -48,7 +48,14 @@ public class LogoutServlet extends HttpServlet {
 			
 			if (code.equals("200")){
 				
+				HttpSession newsession = request.getSession(false);
+			    if (newsession != null) 
+			    {
+			         newsession.invalidate();
+
+			    }
 				response.sendRedirect("jsps/pages-login.jsp");
+				
 			}
 			else{
 				response.sendRedirect("jsps/pages-error.jsp");

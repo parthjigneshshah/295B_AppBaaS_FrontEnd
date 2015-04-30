@@ -70,7 +70,7 @@
                                             <select class="form-control select" name = "AppType">
                                                 <option>Engineering</option>
                                                 <option>Social</option>
-                                                <option>E Commerce</option>
+                                                <option>ECommerce</option>
                                                 <option>News</option>                                              
                                             </select>                                            
                                         </div>

@@ -23,6 +23,7 @@ public class NotificationServiceManager {
 		
 		try {					
 			jsonRequest.put("notification", notificationText);
+			System.out.println(sessionToken+""+appKey);
 			appClient.HttpInit("POST","http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/AlertManager/sendNotificationToAllUsers");
 			appClient.addHeader("sessionToken",sessionToken);
 			appClient.addHeader("applicationKey",appKey);

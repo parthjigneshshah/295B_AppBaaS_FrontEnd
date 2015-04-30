@@ -1,3 +1,4 @@
+<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -61,7 +62,7 @@
                        		app = jsonApp.getJSONObject(i);
                        		JSONArray appServices = new JSONArray();
                        		appServices = app.getJSONArray("services");
-                       		int no_of_services = appServices.length();
+                       		int no_of_services = appServices.length();			
                        		%>
 
 					<div class="col-md-4">
@@ -91,21 +92,62 @@
 
 									<p>
 										<small>Description</small><br /><%=app.getString("appDesc") %></p>
-
+									<% HashMap<String, String> map = new HashMap<String, String>() ; %>
 									<%for(int j = 0; j < no_of_services; j++){
                                         	JSONObject service = new JSONObject();
                                         	service = appServices.getJSONObject(j);
-                                        	
+                                        	map.put(service.getString("service_name").toString(),service.getString("service_name").toString());
+                                        	System.out.println(service.getString("service_name").toString());
                                         %>
 									<p>
-										<small>Services:</small>
-										<%= service.getString("service_name").toString() %></p>
-
-									<%} %>
+										<% }
+									
+									 for(int x = 0; x < 4; x++){
+										
+										if(map.containsKey("UserManager"))
+										{ %>
+										<small>Service:</small> <%= map.get("UserManager") %></p>
+										
+											<% System.out.println(map.get("UserManager"));
+											map.remove("UserManager");
+										}
+										else if(map.containsKey("ObjManager"))
+										{ %>
+										<small>Service:</small> <%= map.get("ObjManager") %></p>
+										
+											<% System.out.println(map.get("ObjManager"));
+											map.remove("ObjManager");
+										}
+										else if(map.containsKey("UserManager"))
+										{ %>
+										<small>Service:</small> <%= map.get("AppManager") %></p>
+										
+											<% System.out.println(map.get("AppManager"));
+											map.remove("AppManager");
+										}
+										else if(map.containsKey("NotificationManager"))
+										{ %>
+										<small>Service:</small> <%= map.get("NotificationManager") %></p>
+										
+											<% System.out.println(map.get("NotificationManager"));
+											map.remove("NotificationManager");
+										}
+										else
+										{ %>
+										<small>Service:</small> not registered </p>
+										<%
+											System.out.println("Not Registered.");
+										}	
+										
+									} %>
+										
+									
 									<form name="appKey" method="get">
 										<p>
 											<small>App Key*:</small><br /><%= app.getString("appKey").toString() %></p>
-										<%String value = app.getString("appKey").toString(); %>
+										<%String value = app.getString("appKey").toString();
+										session.setAttribute("appKey", value);
+										%>
 										<p>
 											<small>App Data:</small><br /> *click <a
 												href="
@@ -139,19 +181,7 @@
 
 
 				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<ul
-							class="pagination pagination-sm pull-right push-down-10 push-up-10">
-							<li class="disabled"><a href="#">«</a></li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">»</a></li>
-						</ul>
-					</div>
-				</div>
+				
 			</div>
 			<!-- END PAGE CONTENT WRAPPER -->
 		</div>

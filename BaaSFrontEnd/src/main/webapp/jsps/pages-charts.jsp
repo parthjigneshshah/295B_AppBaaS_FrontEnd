@@ -159,7 +159,7 @@ FusionCharts.ready(function () {
                                     <h3 class="panel-title">User Registration For Different Services</h3>                                
                                 </div>
                                 <div class="panel-body">
-                                  <div id="chart-container2"></div>
+                                  <div id="chart-container2" style = "height: 450px"></div>
                                 </div>
                             </div>
                             <!-- END Area CHART -->                        

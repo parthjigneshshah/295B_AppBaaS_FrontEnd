@@ -57,6 +57,7 @@
 										<%
 											}
 										%>
+										<th> Action </th>
 										<%
 											for (int k = 0; k < tabObj.getRows().size(); k += columnSize) {
 										%>

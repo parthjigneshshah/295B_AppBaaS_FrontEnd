@@ -70,8 +70,8 @@
 						
 											 <a href="
                           					 <c:url value="../GetTableDetailsServlet">
-       										 <c:param name="action" value="<%=userTableName%>"/>
-        									 </c:url>" class="list-group-item"><%=userTableName%></a>    
+       										 <c:param name="action" value="<%=tableList.getString(i)%>"/>
+        									 </c:url>" class="list-group-item"><%=tableList.getString(i)%></a>    
 						
 						<% 
 						}

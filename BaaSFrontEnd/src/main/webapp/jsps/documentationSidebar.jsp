@@ -16,14 +16,31 @@
                         <a href="../GetApplicationServlet"><img src = "../img/logo-small.png"></a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
-                    <li class="xn-profile">
+                 
+                   <li class="xn-profile">
                         <a href="../pages-profile.html" class="profile-mini">
                             <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
                         </a>
-                                                                                         
+                        <div class="profile">
+                        
+                            <div class="profile-image">
+                            <a href="pages-sample.jsp">
+                                <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
+                            </a>
+                            </div>
+                            
+                            <div class="profile-data">
+                                <div class="profile-data-name"></div>
+                               
+                            </div>	
+                            <div class="profile-controls">
+                                <a href=# class="profile-control-left"><span class="fa fa-info"></span></a>
+                                <a href=# class="profile-control-right"><span class="fa fa-envelope"></span></a>
+                            </div>
+                        </div>                                                                        
                     </li>
-                    <li class="xn-title">Navigation</li>
-                    <li class="active">
+                    <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>
+                    <li>
                         <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">User Manager</span></a>                        
                     </li>                    
                    <li>
@@ -36,7 +53,7 @@
                         <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Object Manager</span></a>                        
                     </li>  
                    
-                                   
+                      
 
                                      
                 

@@ -65,6 +65,8 @@ try {
 			if (statusCode.equals("200")){
 				
 				response.sendRedirect("GetApplicationServlet");
+				session.setAttribute("UserName", uname);
+				session.setAttribute("password", password);
 			}
 			
 			else{
