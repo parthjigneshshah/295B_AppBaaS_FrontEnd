@@ -23,7 +23,25 @@
             <div class="login-box animated fadeInDown">
                 <div class="login-logo"></div>
           
+                 <%
+                						String message = "";
+                						System.out.println("message:"+message);
+                						
+                	
+               						 %>
+                <%
+                if(session.getAttribute("loginErrorMsg") != null ){
+                	message = session.getAttribute("loginErrorMsg").toString();
+                }
+                %>
+                <%
+                	if(message.length() > 0) {%>
+                		
+                		<div class="login-title" style = "color:#ffffff; font-size: 14px;"><strong>Error</strong>,   <%=message%></div>
+                		
+                	<%}
                 
+                %>
                 
                 <div class="login-body">
                     <div class="login-title"><strong>Welcome</strong>, Please login</div>
