@@ -54,9 +54,17 @@ public class GetTableDetailsServlet extends HttpServlet {
 		jsonResponse = gtdsm.getTableDetails(sessionToken, appKey, tableName);
 		
 		System.out.println("table details: "+jsonResponse.toString());
+		try {
+			System.out.println(jsonResponse.getString("rows"));
+		} catch (JSONException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		try {
 			String code = jsonResponse.getString("code");
+			
+			System.out.println("code is: "+code);
 			if(code.equals("200")){
 				session.setAttribute("tableDetails", jsonResponse);
 				TableDetailModel tableDetailsobj = new TableDetailModel();
@@ -71,42 +79,98 @@ public class GetTableDetailsServlet extends HttpServlet {
 					
 					JSONArray colArray = tableInfo.getJSONArray("columns");
 					
-					JSONArray rowArray = tableInfo.getJSONArray("rows");
+					JSONObject tempObj = (JSONObject)jsonResponse.get("tableDetails");
 					
-					String tableN = tableInfo.getString("tableName");
-					
-					
-					tableDetailsobj.setTableName(tableN);
-					
-					for(int i=0;i<colArray.length();i++)
-					{
-						columnData = new TableDetailColumnData();
-						JSONObject colObject = colArray.getJSONObject(i);
-						columnData.setColumnName(colObject.getString("columnName"));
-						columnData.setColumnType(colObject.getString("columnType"));
-						columnData.setPkFlag(colObject.getBoolean("pkFlag"));
-						columnList.add(columnData);
-					}
-					
-					
-					
+					if(!tempObj.getString("rows").equals("null")){
+						
+						System.out.println("rows are there");
+						JSONArray rowArray = tableInfo.getJSONArray("rows");
+						
+						String tableN = tableInfo.getString("tableName");
+						
+						
+						tableDetailsobj.setTableName(tableN);
+						
+						for(int i=0;i<colArray.length();i++)
+						{
+							columnData = new TableDetailColumnData();
+							JSONObject colObject = colArray.getJSONObject(i);
+							columnData.setColumnName(colObject.getString("columnName"));
+							columnData.setColumnType(colObject.getString("columnType"));
+							columnData.setPkFlag(colObject.getBoolean("pkFlag"));
+							columnList.add(columnData);
+						}
+						
+						
+						
 
-					for(int i=0;i<rowArray.length();i++)
-					{
-						rowData = new TableDetailRowData();
-						JSONObject rowObject = rowArray.getJSONObject(i);
-						rowData.setColumnName(rowObject.getString("columnName"));
-						rowData.setValue(rowObject.getString("value"));
-						rowList.add(rowData);
+						for(int i=0;i<rowArray.length();i++)
+						{
+							rowData = new TableDetailRowData();
+							JSONObject rowObject = rowArray.getJSONObject(i);
+							rowData.setColumnName(rowObject.getString("columnName"));
+							rowData.setValue(rowObject.getString("value"));
+							rowList.add(rowData);
+						}
+						
+						tableDetailsobj.setColumns(columnList);
+						tableDetailsobj.setRows(rowList);
+						//RequestDispatcher rd = request.getRequestDispatcher("/jsps/pages-show-tables.jsp");
+						System.out.println("table dtails: "+tableDetailsobj.toString());
+						session.setAttribute("tableDetailsjsp",tableDetailsobj );
+						response.sendRedirect("jsps/pages-show-tables.jsp");
+					}
+					else{
+						
+						//JSONArray rowArray = tableInfo.getJSONArray("rows");
+						
+						String tableN = tableInfo.getString("tableName");
+						
+						
+						tableDetailsobj.setTableName(tableN);
+						
+						for(int i=0;i<colArray.length();i++)
+						{
+							columnData = new TableDetailColumnData();
+							JSONObject colObject = colArray.getJSONObject(i);
+							columnData.setColumnName(colObject.getString("columnName"));
+							columnData.setColumnType(colObject.getString("columnType"));
+							columnData.setPkFlag(colObject.getBoolean("pkFlag"));
+							columnList.add(columnData);
+						}
+						
+						
+						
+
+						/*for(int i=0;i<rowArray.length();i++)
+						{
+							rowData = new TableDetailRowData();
+							JSONObject rowObject = rowArray.getJSONObject(i);
+							rowData.setColumnName(rowObject.getString("columnName"));
+							rowData.setValue(rowObject.getString("value"));
+							rowList.add(rowData);
+						}*/
+						
+						tableDetailsobj.setColumns(columnList);
+						tableDetailsobj.setRows(rowList);
+						//RequestDispatcher rd = request.getRequestDispatcher("/jsps/pages-show-tables.jsp");
+						System.out.println("table dtails: "+tableDetailsobj.toString());
+						session.setAttribute("tableDetailsjsp",tableDetailsobj );
+						response.sendRedirect("jsps/pages-show-tables.jsp");
 					}
 					
-					tableDetailsobj.setColumns(columnList);
-					tableDetailsobj.setRows(rowList);
-					//RequestDispatcher rd = request.getRequestDispatcher("/jsps/pages-show-tables.jsp");
-					System.out.println("table dtails: "+tableDetailsobj.toString());
-					session.setAttribute("tableDetailsjsp",tableDetailsobj );
-					response.sendRedirect("jsps/pages-show-tables.jsp");
+			
 			}
+			
+			else if(code.equals("1014")){
+				
+				String message = "You have no entry in table "+tableName+" please take appropriate action accordingly.";
+				
+				request.setAttribute("message", message);
+				response.sendRedirect("jsps/pages-show-tables.jsp");
+				
+			}
+			
 			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block

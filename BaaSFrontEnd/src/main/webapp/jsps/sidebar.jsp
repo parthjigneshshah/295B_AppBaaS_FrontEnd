@@ -21,9 +21,17 @@
                             <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
                         </a>
                         <div class="profile">
+                       <%
+                       System.out.println("in sidebar");
+                       System.out.println(request.getSession(false));
+                       if(request.getSession(false) == null){
+                    	   
+                    	   System.out.println("session is null");
+                       }
+                       %>
                        
                             <div class="profile-image">
-                            <a href="pages-sample.jsp">
+                            <a href="pages-applications.jsp">
                                 <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
                             </a>
                             </div>

@@ -33,8 +33,14 @@
 			<div class="page-content-wrap">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="panel panel-default">
+						<div class="panel panel-default" style = "width: 700px">
 							<div class="panel-heading">
+								<%if(tabObj == null){
+									
+									
+									
+								} %>
+								
 								<%
 									String tableName = tabObj.getTableName().substring(
 											tabObj.getTableName().indexOf("_") + 1);
@@ -45,7 +51,7 @@
 							</div>
 							<div class="panel-body">
 
-								<div class="table-responsive">
+								<div class="table-responsive" >
 									<table class="table table-bordered">
 										<%
 											int columnSize = tabObj.getColumns().size();
@@ -56,14 +62,20 @@
 										<th><%=tabObj.getColumns().get(j).getColumnName()%></th>
 										<%
 											}
+										%><% 
+										if(tabObj.getRows().size() > 0){
 										%>
 										<th> Action </th>
 										<%
+																												
 											for (int k = 0; k < tabObj.getRows().size(); k += columnSize) {
 										%>
 										<tr>
 											<%
 												for (int l = 0; l < columnSize; l++) {
+													
+											%><%
+											
 											%>
 											<td><%=tabObj.getRows().get(k + l).getValue()%><%System.out.println(k+l); %></td>
 											<%
@@ -78,7 +90,9 @@
 										</tr>						
 										<%
 											}
-										%>
+										
+											
+										%><%} %>
 
 
 									</table>

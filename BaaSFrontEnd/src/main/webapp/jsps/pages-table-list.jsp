@@ -64,13 +64,15 @@
 						for(int i = 0; i < tableListLength; i++){
 							
 							String tableName = tableList.getString(i);
+							System.out.println(tableName);
 							String userTableName = tableName.substring(tableName.indexOf("_")+1);
 							System.out.println("table names are"+ userTableName);
 						%>  
 						
 											 <a href="
                           					 <c:url value="../GetTableDetailsServlet">
-       										 <c:param name="action" value="<%=tableList.getString(i)%>"/>
+                          					 
+											 <c:param name="action" value="<%=tableList.getString(i)%>"/>
         									 </c:url>" class="list-group-item"><%=tableList.getString(i)%></a>    
 						
 						<% 

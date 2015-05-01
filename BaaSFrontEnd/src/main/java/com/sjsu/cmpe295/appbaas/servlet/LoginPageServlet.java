@@ -52,7 +52,7 @@ public class LoginPageServlet extends HttpServlet {
 		jsonResponse = lsm.loginUser(uname, password);		
 		
 try {
-			
+			System.out.println(jsonResponse.toString());
 			String sessionToken = jsonResponse.getString("sessionToken").toString();
 			System.out.println(sessionToken);
 			

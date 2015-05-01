@@ -13,7 +13,7 @@
                     </div>
                     <div class="pull-right">
                         <a href="#">About</a> |
-                        <a href="#">Documentation</a> |
+                        <a href="pages-registration.jsp">Registration</a> |
                         <a href="#">Privacy</a> |
                         <a href="#">Contact Us</a>
                     </div>

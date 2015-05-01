@@ -7,6 +7,38 @@
     </head>
     <body>
             <!-- START X-NAVIGATION VERTICAL -->
+                <%if(session.getAttribute("UserName") == null){%>
+                	System.out.println("null session");
+                	
+                	 <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                    
+                                       
+                    <!-- POWER OFF -->
+                    <li class="xn-icon-button pull-right last">
+                       <a href="pages-faq.jsp">AboutUs</a>
+                                              
+                    </li> 
+                    <!-- END POWER OFF -->                    
+					<!--  edit profile  -->                   
+                     <li class="xn-icon-button pull-right">
+                        <a href="pages-login.jsp"><span>Sign In</span></a>
+                     </li>
+                      <li class="xn-icon-button pull-right">
+                        
+                        <a href="pages-documentation.jsp"><span>Documentation</span></a>
+                     </li>
+                    <!-- end of edit profile -->
+                    <!-- application form -->
+                    
+                    
+                    <!-- end of application form -->
+                    
+                </ul>
+                	
+                	<%}
+                else{
+                	%>
+               
                 <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
                     <!-- TOGGLE NAVIGATION -->
                     <li class="xn-icon-button">
@@ -35,7 +67,7 @@
                     
                     <!-- end of application form -->
                     
-                </ul>
+                </ul><%} %>
                 <!-- END X-NAVIGATION VERTICAL -->                     
 
                                

@@ -17,29 +17,39 @@
                         <a href="#" class="x-navigation-control"></a>
                     </li>
                  
-                   <li class="xn-profile">
+                   
+                       
+                        <% if(session.getAttribute("UserName") == null){
+                        	System.out.println("null session");}
+                        	
+                        else {
+                        	String userName = session.getAttribute("UserName").toString();%>
+                        <li class="xn-profile">
                         <a href="../pages-profile.html" class="profile-mini">
                             <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
                         </a>
                         <div class="profile">
+                        <div class="profile-image">
+                        <a href="pages-sample.jsp">
+                            <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
+                        </a>
+                        </div>
                         
-                            <div class="profile-image">
-                            <a href="pages-sample.jsp">
-                                <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
-                            </a>
-                            </div>
-                            
-                            <div class="profile-data">
-                                <div class="profile-data-name"></div>
-                               
-                            </div>	
-                            <div class="profile-controls">
-                                <a href=# class="profile-control-left"><span class="fa fa-info"></span></a>
-                                <a href=# class="profile-control-right"><span class="fa fa-envelope"></span></a>
-                            </div>
-                        </div>                                                                        
-                    </li>
-                    <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>
+                        <div class="profile-data">
+                            <div class="profile-data-name"><%= userName %></div>
+                           
+                        </div>	
+                        <div class="profile-controls">
+                            <a href=# class="profile-control-left"><span class="fa fa-info"></span></a>
+                            <a href=# class="profile-control-right"><span class="fa fa-envelope"></span></a>
+                        </div>
+                    </div>  
+                    </li>    
+                     <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>
+                      <% }%>
+                                                                            
+                    
+                   
                     <li>
                         <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">User Manager</span></a>                        
                     </li>                    
