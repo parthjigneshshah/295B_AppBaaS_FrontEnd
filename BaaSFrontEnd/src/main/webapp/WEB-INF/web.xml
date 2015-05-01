@@ -95,6 +95,30 @@
   	<description></description>
   	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.CheckLockScreenPasword</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>GetSubscriptionServlet</servlet-name>
+  	<display-name>GetSubscriptionServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.GetSubscriptionServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SendAdminNotificationServlet</servlet-name>
+  	<display-name>SendAdminNotificationServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.SendAdminNotificationServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UnsubscribeServlet</servlet-name>
+  	<display-name>UnsubscribeServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.UnsubscribeServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CheckSubscriptionFlagServlet</servlet-name>
+  	<display-name>CheckSubscriptionFlagServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.CheckSubscriptionFlagServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>RegistrationPageServlet</servlet-name>
@@ -155,5 +179,21 @@
   <servlet-mapping>
   	<servlet-name>CheckLockScreenPasword</servlet-name>
   	<url-pattern>/CheckLockScreenPasword</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetSubscriptionServlet</servlet-name>
+  	<url-pattern>/GetSubscriptionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SendAdminNotificationServlet</servlet-name>
+  	<url-pattern>/SendAdminNotificationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UnsubscribeServlet</servlet-name>
+  	<url-pattern>/UnsubscribeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CheckSubscriptionFlagServlet</servlet-name>
+  	<url-pattern>/CheckSubscriptionFlagServlet</url-pattern>
   </servlet-mapping>
 </web-app>

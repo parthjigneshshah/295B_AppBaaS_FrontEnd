@@ -8,7 +8,7 @@
     <body>
             <!-- START X-NAVIGATION VERTICAL -->
                 <%if(session.getAttribute("UserName") == null){%>
-                	System.out.println("null session");
+                
                 	
                 	 <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
                     

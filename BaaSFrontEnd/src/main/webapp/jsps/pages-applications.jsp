@@ -98,9 +98,11 @@
                                         	service = appServices.getJSONObject(j);
                                         	map.put(service.getString("service_name").toString(),service.getString("service_name").toString());
                                         	System.out.println(service.getString("service_name").toString());
+                                        	
                                         %>
 									<p>
 										<% }
+									System.out.println("map size:"+map.size());
 									
 									 for(int x = 0; x < 4; x++){
 										
@@ -118,7 +120,7 @@
 											<% System.out.println(map.get("ObjManager"));
 											map.remove("ObjManager");
 										}
-										else if(map.containsKey("UserManager"))
+										else if(map.containsKey("AppManager"))
 										{ %>
 										<small>Service:</small> <%= map.get("AppManager") %></p>
 										

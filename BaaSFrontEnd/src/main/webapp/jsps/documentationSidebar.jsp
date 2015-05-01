@@ -16,13 +16,25 @@
                         <a href="../GetApplicationServlet"><img src = "../img/logo-small.png"></a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
-                 
+                  <li>
+                        <a href="pages-documentaion-usermanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">User Manager</span></a>                        
+                    </li>                    
+                   <li>
+                        <a href="pages-documentaion-appmanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Application Manager</span></a>                        
+                    </li>  
+                    <li>
+                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Notification Manager</span></a>                        
+                    </li>  
+                    <li>
+                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Object Manager</span></a>                        
+                    </li>  
                    
                        
                         <% if(session.getAttribute("UserName") == null){
                         	System.out.println("null session");}
                         	
                         else {
+                        	String subScriptionCode = session.getAttribute("subscriptionCode").toString(); 
                         	String userName = session.getAttribute("UserName").toString();%>
                         <li class="xn-profile">
                         <a href="../pages-profile.html" class="profile-mini">
@@ -44,24 +56,38 @@
                             <a href=# class="profile-control-right"><span class="fa fa-envelope"></span></a>
                         </div>
                     </div>  
+                    
                     </li>    
                      <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>
+                     <li>
+                        <a href="../GetApplicationServlet"><span class="fa fa-desktop"></span> <span class="xn-text">Applications</span></a>                        
+                    </li>                
+                    <li><a href="../UserDetailServlet"><span class="fa fa-pencil"></span> Edit Profile</a></li>
+                    <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>               
+                    <%String uName = session.getAttribute("UserName").toString(); %>
+                    
+                    <%
+                    if(!uName.equals("adminuser@appbaas.com")){
+                    if(subScriptionCode.equals("200")){ %>
+                    <li><a href="../UnsubscribeServlet"><span class="fa fa-question"></span>UnSubscribe</a></li><% }
+                    
+                    else{%>
+                    <li><a href="../GetSubscriptionServlet"><span class="fa fa-question"></span>Subscribe</a></li>
+                    <%}
+                    }%>
+                    <%
+                    
+                    
+                    if( uName.equals("adminuser@appbaas.com") ){%>
+                    	
+                    	 <li><a href="pages-notification.jsp"><span class="fa fa-envelope"></span>Send Notification</a></li>
+                    	
+                   <% }%>
                       <% }%>
                                                                             
                     
                    
-                    <li>
-                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">User Manager</span></a>                        
-                    </li>                    
-                   <li>
-                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Application Manager</span></a>                        
-                    </li>  
-                    <li>
-                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Notification Manager</span></a>                        
-                    </li>  
-                    <li>
-                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Object Manager</span></a>                        
-                    </li>  
+                   
                    
                       
 

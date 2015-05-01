@@ -44,26 +44,40 @@ public class LoginPageServlet extends HttpServlet {
 		
 		String uname = request.getParameter("userName");
 		String password = request.getParameter("password");
+		String sessionToken ="";
+		String subscriptionCode ="";
 		
 		JSONObject jsonResponse = null;
+		JSONObject jsonSubscriptionResponse = null;
 		
 		
 		LoginServiceManager lsm = new LoginServiceManager();
+		SubscriptionStatusServiceManager sssm = new SubscriptionStatusServiceManager();
+		
 		jsonResponse = lsm.loginUser(uname, password);		
 		
 try {
 			System.out.println(jsonResponse.toString());
-			String sessionToken = jsonResponse.getString("sessionToken").toString();
-			System.out.println(sessionToken);
 			
+			sessionToken = jsonResponse.getString("sessionToken").toString();
+
+			
+			//System.out.println(sessionToken);
 			HttpSession session = request.getSession();
-			session.setAttribute("sessionToken", sessionToken);
+		
+			
 			
 			JSONObject responseObj =  (JSONObject) jsonResponse.get("responseObject");
 			String statusCode = responseObj.get("code").toString();
 			System.out.println("statusCosde"+statusCode);
 			if (statusCode.equals("200")){
-				
+			
+				session.setAttribute("sessionToken", sessionToken);
+				 
+				jsonSubscriptionResponse = sssm.getSubscriptionFlag(sessionToken);
+				System.out.println(""+jsonSubscriptionResponse.toString());
+				 subscriptionCode = (String)jsonSubscriptionResponse.getString("code");
+					session.setAttribute("subscriptionCode", subscriptionCode);
 				response.sendRedirect("GetApplicationServlet");
 				session.setAttribute("UserName", uname);
 				session.setAttribute("password", password);

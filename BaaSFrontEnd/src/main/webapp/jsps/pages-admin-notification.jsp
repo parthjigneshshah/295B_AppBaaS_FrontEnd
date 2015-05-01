@@ -36,7 +36,7 @@
                                 <div class="panel-body">
                                   
                          <div class="content-frame-left">
-                         <form action="../SendNotificationServlet" class="form-horizontal" method="get">
+                         <form action="../SendAdminNotificationServlet" class="form-horizontal" method="get">
                         <div class="form-group">
                             <h4>Send new notification:</h4>
                             <textarea class="form-control push-down-10" id="new_task" rows="4" placeholder="Your notification text here..." name = "notificationText"></textarea>                            

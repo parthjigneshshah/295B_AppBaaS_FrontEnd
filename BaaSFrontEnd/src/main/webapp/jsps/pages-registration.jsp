@@ -58,12 +58,12 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <input type="password" class="form-control" name = "confirmPassword" id = "confirmPassword" placeholder="Re-Password"/>
-                                    </div>
+                                 	   </div>
                                 </div>             
 
                                 <div class="form-group push-up-30">
                                     <div class="col-md-6">
-                                        <a href="pages-login-inside.jsp" class="btn btn-link btn-block">Already have an account?</a>
+                                        <a href="pages-login.jsp" class="btn btn-link btn-block">Already have an account?</a>
                                     </div>
                                     <div class="col-md-6">
                                         <button class="btn btn-danger btn-block">Sign Up</button>

@@ -9,6 +9,7 @@
        
             
          <!-- START PAGE SIDEBAR -->
+         <%String subScriptionCode = session.getAttribute("subscriptionCode").toString(); %>
             <div class="page-sidebar">
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
@@ -16,20 +17,19 @@
                         <a href="pages-applications.jsp"><img src = "../img/logo-small.png"></a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
-                    <li class="xn-profile">
-                        <a href="../pages-profile.html" class="profile-mini">
-                            <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
-                        </a>
-                        <div class="profile">
+                    
                        <%
                        System.out.println("in sidebar");
                        System.out.println(request.getSession(false));
                        if(request.getSession(false) == null){
-                    	   
                     	   System.out.println("session is null");
                        }
                        %>
-                       
+                    		<li class="xn-profile">
+                        <a href="../pages-profile.html" class="profile-mini">
+                            <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
+                        </a>
+                        <div class="profile">   
                             <div class="profile-image">
                             <a href="pages-applications.jsp">
                                 <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
@@ -52,7 +52,25 @@
                     </li>                
                     <li><a href="../UserDetailServlet"><span class="fa fa-pencil"></span> Edit Profile</a></li>
                     <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>               
-                    <li><a href="pages-subscribe.jsp"><span class="fa fa-question"></span>Subscribe</a></li>
+                    <%String uName = session.getAttribute("UserName").toString(); %>
+                    
+                    <%
+                    if(!uName.equals("adminuser@appbaas.com")){
+                    if(subScriptionCode.equals("200")){ %>
+                    <li><a href="../UnsubscribeServlet"><span class="fa fa-question"></span>UnSubscribe</a></li><% }
+                    
+                    else{%>
+                    <li><a href="../GetSubscriptionServlet"><span class="fa fa-question"></span>Subscribe</a></li>
+                    <%}
+                    }%>
+                    <%
+                    
+                    
+                    if( uName.equals("adminuser@appbaas.com") ){%>
+                    	
+                    	 <li><a href="pages-notification.jsp"><span class="fa fa-envelope"></span>Send Notification</a></li>
+                    	
+                   <% }%>
                         
                     
                    

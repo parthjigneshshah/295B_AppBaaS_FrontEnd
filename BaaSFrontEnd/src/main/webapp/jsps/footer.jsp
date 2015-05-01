@@ -12,10 +12,10 @@
                         &copy; 2015 AppBaas
                     </div>
                     <div class="pull-right">
-                        <a href="#">About</a> |
+                       
                         <a href="pages-registration.jsp">Registration</a> |
-                        <a href="#">Privacy</a> |
-                        <a href="#">Contact Us</a>
+                        <a href="#	">Privacy</a> |
+                        <a href="pages-faq.jsp">Contact Us</a>
                     </div>
                 </div>
 </body>
