@@ -29,9 +29,11 @@
                                           <!--  <h5>Aliquam at ipsum sapien</h5> -->
                                           
                                             <p>POST</p>
-											<br/>
+											
 											<p>API : http://www.appbaaservices.om:8080/AppBaasServiceFramework/services/rest/UserManager/registerUser</p>
-											<br/>
+											
+											<p>Header Param : (applicationKey : appDemoUserApp1430440634776Engineering)</p>
+											
 											<p>Request Body :</p>
 											
 											<p>
@@ -64,9 +66,10 @@
                                           
                                           
                                             <p>POST</p>
-											<br/>
+											
 											<p>API : http://www.appbaaservices.om:8080/AppBaasServiceFramework/services/rest/UserManager/login</p>
-											<br/>
+											<p>Header Param : (applicationKey : appDemoUserApp1430440634776Engineering)</p>
+											
 											<p>Request Body :</p>
 											
 											<p>
@@ -96,10 +99,9 @@
                                         <div class="faq-title"><span class="fa fa-angle-down"></span>Get User Details By ID:</div>
                                         <div class="faq-text">
                                             <p>GET</p>
-											<br/>
-											<p>API : http://www.appbaaservices.om:8080/AppBaasServiceFramework/services/rest/UserManager/getUserDetailsById</p>
-											<br/>
 											
+											<p>API : http://www.appbaaservices.om:8080/AppBaasServiceFramework/services/rest/UserManager/getUserDetailsById</p>
+											<p>Header Param : (applicationKey : appDemoUserApp1430440634776Engineering)</p>
 											<p>Parameters : ( sessionToken : appdemo.user@sjsu.edu#1430440352336 )</p>
 											
 											
@@ -131,8 +133,10 @@
                                         	<p>POST</p>
                                             <p>
 											API : http://www.appbaaservices.om:8080/AppBaasServiceFramework/services/rest/UserManager/logout</p>
+											<p>Header Param : (applicationKey : appDemoUserApp1430440634776Engineering)</p>
 											<p>
 											Parameters : ( sessionToken : appdemo.user@sjsu.edu#1430440352336 )</p>
+											
 											<p>
 											Response Body :<br/> 
 

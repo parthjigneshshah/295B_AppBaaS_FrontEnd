@@ -46,7 +46,9 @@
                             </div>
                         </div>                                                                        
                     </li>
-                   
+                    <li>
+                        <a href="../PdfDownloadServlet"><span class="fa fa-download"></span> <span class="xn-text">Download JAR</span></a>                        
+                    </li>
                     <li>
                         <a href="../GetApplicationServlet"><span class="fa fa-desktop"></span> <span class="xn-text">Applications</span></a>                        
                     </li>                

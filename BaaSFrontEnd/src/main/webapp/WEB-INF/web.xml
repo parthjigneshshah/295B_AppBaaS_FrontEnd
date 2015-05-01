@@ -119,6 +119,18 @@
   	<description></description>
   	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.CheckSubscriptionFlagServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PdfDownload</servlet-name>
+  	<display-name>PdfDownload</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.PdfDownload</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PdfDownloadServlet</servlet-name>
+  	<display-name>PdfDownloadServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.PdfDownloadServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>RegistrationPageServlet</servlet-name>
@@ -195,5 +207,13 @@
   <servlet-mapping>
   	<servlet-name>CheckSubscriptionFlagServlet</servlet-name>
   	<url-pattern>/CheckSubscriptionFlagServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PdfDownload</servlet-name>
+  	<url-pattern>/PdfDownload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PdfDownloadServlet</servlet-name>
+  	<url-pattern>/PdfDownloadServlet</url-pattern>
   </servlet-mapping>
 </web-app>
