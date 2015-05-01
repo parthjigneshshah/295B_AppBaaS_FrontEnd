@@ -69,6 +69,13 @@ try {
 				session.setAttribute("password", password);
 			}
 			
+			else if(statusCode.equals("1002")){
+				
+				String message = "Incorrect User name or password";
+				session.setAttribute("loginErrorMsg", message);
+				response.sendRedirect("jsps/pages-login.jsp");
+				
+			}
 			else{
 			response.sendRedirect("jsps/pages-error.jsp");	
 			}

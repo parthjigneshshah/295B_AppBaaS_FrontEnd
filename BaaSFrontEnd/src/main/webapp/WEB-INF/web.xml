@@ -89,6 +89,12 @@
   	<description></description>
   	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.AnalyticsServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CheckLockScreenPasword</servlet-name>
+  	<display-name>CheckLockScreenPasword</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.CheckLockScreenPasword</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>RegistrationPageServlet</servlet-name>
@@ -145,5 +151,9 @@
   <servlet-mapping>
   	<servlet-name>AnalyticsServlet</servlet-name>
   	<url-pattern>/AnalyticsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CheckLockScreenPasword</servlet-name>
+  	<url-pattern>/CheckLockScreenPasword</url-pattern>
   </servlet-mapping>
 </web-app>

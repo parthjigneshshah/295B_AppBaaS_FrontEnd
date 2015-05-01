@@ -4,6 +4,9 @@
 <html lang="en">
     <head>        
         <%@include file = "metaAndCss.jsp" %>  
+        <script type="text/javascript">
+ 
+        </script>
     </head>
     <body>
         <!-- START PAGE CONTAINER -->
@@ -26,12 +29,12 @@
                     <div class="row" align="center">                        
   		              <div class="registration-title" align="center"><strong>Registration</strong>, use form below</div>
                            
-                            <form action="../RegistrationPageServlet" class="form-horizontal" method="post">
+                            <form action="../RegistrationPageServlet" id = "register-form" class="form-horizontal" method="post">
 
                                 <h4>Personal info</h4>
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="text" name = "firstName" id = "useName" class="form-control" placeholder="First Name"/>
+                                        <input type="text" name = "firstName" id = "firstName" class="form-control" placeholder="First Name"/>
                                     </div>
                                 </div>
                                     <div class="form-group">

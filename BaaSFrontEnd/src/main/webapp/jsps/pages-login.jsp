@@ -13,15 +13,18 @@
         <link rel="icon" href="../favicon.ico" type="image/x-icon" />
         <!-- END META SECTION -->
         
-        <!-- CSS INCLUDE -->        	
-        <link rel="stylesheet" type="text/css" id="theme" href="../css/theme-default.css"/>
+      <link rel="stylesheet" type="text/css" id="theme" href="../css/theme-default.css"/>
         <!-- EOF CSS INCLUDE -->    
     </head>
     <body>
         
         <div class="login-container">
+        	
             <div class="login-box animated fadeInDown">
                 <div class="login-logo"></div>
+          
+                
+                
                 <div class="login-body">
                     <div class="login-title"><strong>Welcome</strong>, Please login</div>
                     <form action="../LoginPageServlet" class="form-horizontal" method="post">

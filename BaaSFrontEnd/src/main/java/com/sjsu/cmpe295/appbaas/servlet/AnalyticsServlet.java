@@ -33,30 +33,43 @@ public class AnalyticsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	JSONObject jsonResponse = null;
+	JSONObject jsonResponseDevCount = null;
+	JSONObject jsonResponseAppTypeCount = null;
 	
 	AnalyticsServiceManager asm = new AnalyticsServiceManager();
 	
-	jsonResponse = asm.getAnalytics();
-	System.out.println(jsonResponse.toString());
+	jsonResponseDevCount = asm.getAnalytics();
+	jsonResponseAppTypeCount = asm.getAppAnalytics();
+	System.out.println(jsonResponseDevCount.toString());
+	System.out.println(jsonResponseAppTypeCount.toString());
 	ArrayList<String> countList = new ArrayList<String>();
+	ArrayList<String> appTypeCountList = new ArrayList<String>();
 	try {
-		if(jsonResponse.getString("code").equals("200")){
+		if(jsonResponseDevCount.getString("code").equals("200")){
 			
-			countList.add(jsonResponse.getString("activeDevelopers"));
-			countList.add(jsonResponse.getString("totalDevelopers"));
-			countList.add(jsonResponse.getString("neverLoggedUsers"));
-			countList.add(jsonResponse.getString("inActiveDevelopers"));
+			countList.add(jsonResponseDevCount.getString("activeDevelopers"));
+			countList.add(jsonResponseDevCount.getString("totalDevelopers"));
+			countList.add(jsonResponseDevCount.getString("neverLoggedUsers"));
+			countList.add(jsonResponseDevCount.getString("inActiveDevelopers"));
 			
 			for(int i = 0; i < countList.size(); i++){
 				
 				System.out.println(countList.get(i));
 				
 			}
+		
+		if(jsonResponseAppTypeCount.getString("code").equals("200")){
+			
+			appTypeCountList.add(jsonResponseAppTypeCount.getString("Engineering"));
+			appTypeCountList.add(jsonResponseAppTypeCount.getString("News"));
+			appTypeCountList.add(jsonResponseAppTypeCount.getString("ECommerce"));
+			appTypeCountList.add(jsonResponseAppTypeCount.getString("Social"));
+			
+		}
 			
 		HttpSession session =  request.getSession();
 		session.setAttribute("countArrayList", countList);
-			
+		session.setAttribute("appTypeCountList", appTypeCountList);	
 		response.sendRedirect("jsps/pages-charts.jsp");
 			
 		}

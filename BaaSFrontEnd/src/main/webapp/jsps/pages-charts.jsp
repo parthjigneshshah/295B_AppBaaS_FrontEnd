@@ -7,12 +7,17 @@
         <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="../js/fusioncharts.charts.js"></script>
 		<script type="text/javascript" src="../js/fusioncharts.js"></script>
+		<script type="text/javascript" src ="../js/fusioncharts.theme.fint.js"></script>
+<script type="text/javascript" src ="../js/fusioncharts.widgets.js"></script>
 	<%@page import="com.sjsu.cmpe295.appbaas.servlet.AnalyticsServlet" %>
 <%@page import="java.util.ArrayList"%>
 <%@ page import="java.io.*,java.util.*" %>
 <%ArrayList<String> countList;
+ArrayList<String> appTypeCountList;
 countList = (ArrayList<String>)session.getAttribute("countArrayList");
+appTypeCountList = (ArrayList<String>)session.getAttribute("appTypeCountList");
 System.out.println(countList.get(1));
+System.out.println(appTypeCountList.get(1));
 %>
 <script type="text/javascript">
 FusionCharts.ready(function () {
@@ -38,7 +43,7 @@ FusionCharts.ready(function () {
                 "showLegend": "1",
                 "legendShadow": "0",
                 "legendBorderAlpha": "0",
-                "defaultCenterLabel": "Total revenue: $64.08K",
+                "defaultCenterLabel": "Average active developers",
                 "centerLabel": "Revenue from $label: $value",
                 "centerLabelBold": "1",
                 "showTooltip": "0",
@@ -49,19 +54,19 @@ FusionCharts.ready(function () {
             },
             "data": [
                 {
-                    "label": "activeDevelopers",
+                    "label": "Active Developers",
                     "value": <%=countList.get(0)%>
                 }, 
                 {
-                    "label": "totalDevelopers",
+                    "label": "Total Developers",
                     "value": <%=countList.get(1)%>
                 },
                 {
-                    "label": "neverLoggedUsers",
+                    "label": "Never Logged Users",
                     "value": <%=countList.get(2)%>
                 }, 
                 {
-                    "label": "inActiveDevelopers",
+                    "label": "InActive Developers",
                     "value": <%=countList.get(3)%>
                 }
             ]
@@ -101,22 +106,138 @@ FusionCharts.ready(function () {
 
             "data": [
                      {
-                         "label": "UserManeger",
-                         "value": <%=countList.get(0)%>
+                         "label": "Engineering",
+                         "value": <%=appTypeCountList.get(0)%>
                      }, 
                      {
-                         "label": "ObjectManager",
+                         "label": "News",
+                         "value": <%=appTypeCountList.get(1)%>
+                     },
+                     {
+                         "label": "ECommerce",
+                         "value": <%=appTypeCountList.get(2)%>
+                     }, 
+                     {
+                         "label": "Social",
+                         "value": <%=appTypeCountList.get(3)%>
+                     }
+                 ]
+        }
+    });
+    revenueChart.render();
+});
+</script>
+<script type="text/javascript">
+
+FusionCharts.ready(function () {
+    var wealthChart = new FusionCharts({
+        type: 'pyramid',
+        renderAt: 'chart-container3',
+        id: 'wealth-pyramid-chart',
+        width: '500',
+        height: '400',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "theme": "fint",
+                
+                "captionOnTop" : "0",
+                "captionPadding": "25",
+                "alignCaptionWithCanvas" : "1",
+                "subcaption": "Application Type Count",
+                "subCaptionFontSize" : "12",
+                "borderAlpha": "20",
+                "is2D": "1",
+                "bgColor": "#ffffff",
+                "showValues": "1",
+                "numberPrefix": "$",
+                "numberSuffix": "M",
+                "plotTooltext": "$label of total users from all ther services  $value  ",
+                "showPercentValues": "1",
+                "chartLeftMargin": "40",
+                "showBorder": "1"
+            },
+            "data": [
+
+                     {
+                         "label": "Engineering",
+                         "value": <%=appTypeCountList.get(0)%>
+                     },
+                     
+                     {
+                         "label": "News",
+                         "value": <%=appTypeCountList.get(1)%>
+                     },
+                     {
+                         "label": "ECommerce",
+                         "value": <%=appTypeCountList.get(2)%>
+                     },
+                     {
+                         "label": "Social",
+                         "value": <%=appTypeCountList.get(3)%>
+                     }
+            ]
+        }  
+    })
+    
+    .render();
+});
+
+
+</script>
+<script type="text/javascript">
+<%response.setIntHeader("Refresh",30); %>
+FusionCharts.ready(function () {
+    var revenueChart = new FusionCharts({
+        type: 'pie2d',
+        renderAt: 'chart-container4',
+        width: '450',
+        height: '350',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+            
+               
+                "numberPrefix": "$",
+                "showPercentValues": "1",
+                "showPercentInTooltip": "0",
+                "decimals": "1",
+                //Radius
+                "pieRadius": "75",
+                //Theme
+                "theme": "fint",
+                "showBorder": "1"
+            },
+            "data": [
+                    
+                
+                    
+                     {
+                         "label": "Total Developers",
+                         "value": <%=countList.get(0)%>
+                     },
+                     
+                     {
+                         "label": "Active Developers",
                          "value": <%=countList.get(1)%>
                      },
                      {
-                         "label": "NotificationManager",
+                         "label": "Never Logged Users",
                          "value": <%=countList.get(2)%>
-                     }, 
+                     },
                      {
-                         "label": "AnalyticsManager",
+                         "label": "Inactive Developers",
                          "value": <%=countList.get(3)%>
-                     }
-                 ]
+                     },
+                    
+                     
+                   
+                
+               
+                
+               
+                
+            ]
         }
     });
     revenueChart.render();
@@ -142,7 +263,7 @@ FusionCharts.ready(function () {
                             <!-- START LINE CHART -->
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Services Registered by App Developers</h3>                                
+                                    <h3 class="panel-title">Users Activity Data</h3>                                
                                 </div>
                                 <div class="panel-body">
                                  <div id="chart-container"></div>
@@ -156,12 +277,45 @@ FusionCharts.ready(function () {
                             <!-- START Area CHART -->
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">User Registration For Different Services</h3>                                
+                                    <h3 class="panel-title">Application Type Distribution among Developers</h3>                                
                                 </div>
                                 <div class="panel-body">
                                   <div id="chart-container2" style = "height: 450px"></div>
                                 </div>
                             </div>
+                            
+                            <!-- END Area CHART -->                        
+
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-md-6">
+
+                            <!-- START Area CHART -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Application Type Distribution among Developers</h3>                                
+                                </div>
+                                <div class="panel-body">
+                                  <div id="chart-container3" style = "height: 450px"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- END Area CHART -->                        
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <!-- START Area CHART -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Users Activity Data</h3>                                
+                                </div>
+                                <div class="panel-body">
+                                  <div id="chart-container4" style = "height: 450px"></div>
+                                </div>
+                            </div>
+                            
                             <!-- END Area CHART -->                        
 
                         </div>

@@ -6,7 +6,9 @@ import com.demo.app.model.AppBaasClient;
 
 public class AnalyticsServiceManager {
 	
-	JSONObject jsonResponse = null;
+	JSONObject jsonResponseDevCount = null;
+	JSONObject jsonResponseAppTypeCount = null;
+	
 	
 	public AnalyticsServiceManager(){
 		
@@ -18,9 +20,17 @@ public class AnalyticsServiceManager {
 		AppBaasClient appClient = new AppBaasClient();
 		
 		appClient.HttpInit("GET","http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/AnalyticsManager/getDevelopersCount");
-		jsonResponse = appClient.execute();
-		return jsonResponse;
+		jsonResponseDevCount = appClient.execute();
+		return jsonResponseDevCount;
 		
+	}
+	
+	public JSONObject getAppAnalytics()
+	{
+		AppBaasClient appClient = new AppBaasClient();
+		appClient.HttpInit("GET", "http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/AnalyticsManager/getApplicationTypesCount");
+		jsonResponseAppTypeCount = appClient.execute();
+		return 	jsonResponseAppTypeCount;
 	}
 
 }
