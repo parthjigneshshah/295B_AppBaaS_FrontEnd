@@ -255,7 +255,14 @@ $(function() {
                     
                     var validator = $("#wizard-validation").validate({
                             rules: {
-                                login: {
+                                
+                            	firstName: {
+                                    required: true,
+                                    minlength: 2,
+                                    maxlength: 8
+                                },
+                            	
+                            	login: {
                                     required: true,
                                     minlength: 2,
                                     maxlength: 8

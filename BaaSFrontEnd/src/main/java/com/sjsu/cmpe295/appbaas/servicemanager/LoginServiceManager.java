@@ -34,6 +34,7 @@ public class LoginServiceManager {
 			
 			AppBaasClient appClient = new AppBaasClient();
 			appClient.HttpInit("POST", "http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/UserManager/login");
+			appClient.addHeader("applicationKey", "FrameworkApp1430460991054News");
 			jsonResponse = appClient.execute(jsonRequest.toString());
 			
 			return jsonResponse;

@@ -4,9 +4,69 @@
 <html lang="en">
     <head>        
         <%@include file = "metaAndCss.jsp" %>  
-        <script type="text/javascript">
- 
-        </script>
+        <script type="text/javascript" src="../js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/plugins/jquery/jquery-ui.min.js"></script>
+         <script type="text/javascript" src="../js/plugins/jquery-validation/jquery.validate.js"></script>
+         
+         <script type="text/javascript">
+         
+         function passVali(){
+        	 
+        	 
+        	 
+        	 var validator = $("#register-form").validate({
+        
+        	 rules:  {
+        		 	confirmPassword: {
+                     required: true,
+                    
+                     equalTo: "#password"
+                 }, 
+                 
+                 firstName: {
+                		required: true,
+                		nowhitespace:true
+                 },
+                 lastName: {
+                	 required: true,
+             		nowhitespace:true
+                 },
+                 password: {
+                	 required: true,
+              		nowhitespace:true
+                  },
+                  email:{
+                	  required: true,
+               		nowhitespace:true,
+               		email:true
+                  }
+                  
+                 },
+         	
+         		message: {
+         			
+         			confirmPassword:"password mismatch"
+         			
+         		}
+        	 
+
+        	 
+         
+         });
+        
+        	 $.validator.addMethod("nowhitespace", function(value, element) {
+        		    return this.optional(element) || /^\S+$/i.test(value);
+        		}, "No white space please");
+         
+         var result = validator.form();
+         if(!result){
+        	 console.log(result);
+             return false; 
+         }
+         
+         
+         }</script>
+        
     </head>
     <body>
         <!-- START PAGE CONTAINER -->
@@ -29,22 +89,22 @@
                     <div class="row" align="center">                        
   		              <div class="registration-title" align="center"><strong>Registration</strong>, use form below</div>
                            
-                            <form action="../RegistrationPageServlet" id = "register-form" class="form-horizontal" method="post">
+                            <form action="../RegistrationPageServlet" id = "register-form" class="form-horizontal" role = "form" method="post" name = "register-form" onsubmit="return passVali()">
 
                                 <h4>Personal info</h4>
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="text" name = "firstName" id = "firstName" class="form-control" placeholder="First Name"/>
+                                        <input type="text" name = "firstName" id = "firstName" class="form-control" placeholder="First Name" required/>
                                     </div>
                                 </div>
                                     <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="text" name = "lastName" id = "lastName" class="form-control" placeholder="Surname"/>
+                                        <input type="text" name = "lastName" id = "lastName" class="form-control" placeholder="Surname" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="text" class="form-control" name = "emailAdd" id = "emailAdd" placeholder="E-mail"/>
+                                        <input type="email" class="form-control" name = "emailAdd" id = "emailAdd" placeholder="E-mail" required/>
                                     </div>
                                 </div>
 
@@ -52,12 +112,12 @@
                                                       
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="password" class="form-control" name = "password" id = "password" placeholder="Password"/>
+                                        <input type="password" class="form-control" name = "password" id = "password" placeholder="Password" required/>
                                     </div>
                                 </div>                    
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="password" class="form-control" name = "confirmPassword" id = "confirmPassword" placeholder="Re-Password"/>
+                                        <input type="password" class="form-control" name = "confirmPassword" id = "confirmPassword" placeholder="Re-Password" required/>
                                  	   </div>
                                 </div>             
 
@@ -66,7 +126,7 @@
                                         <a href="pages-login.jsp" class="btn btn-link btn-block">Already have an account?</a>
                                     </div>
                                     <div class="col-md-6">
-                                        <button class="btn btn-danger btn-block">Sign Up</button>
+                                        <button class="btn btn-danger btn-block" id = "signUp" >Sign Up</button>
                                     </div>
                                 </div>
                                 

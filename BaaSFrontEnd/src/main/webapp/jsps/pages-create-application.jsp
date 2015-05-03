@@ -4,6 +4,51 @@
 <html lang="en">
     <head>        
         <%@include file = "metaAndCss.jsp" %>  
+    
+    <script type="text/javascript">
+         
+         function passVali(){
+        	 
+        	
+        	 var validator = $("#createApp-form").validate({
+        
+        	 rules:  {
+        		 	
+        		 AppName: {
+                		required: true,
+                		nowhitespace:true
+                 },
+                 AppDesc: {
+                	 required: true,
+             		
+                 },
+                 AppVer: {
+                	 required: true,
+              		
+                  },
+                 
+                 },
+         	
+         		
+        	 
+
+        	 
+         
+         });
+        
+        	 $.validator.addMethod("nowhitespace", function(value, element) {
+        		    return this.optional(element) || /^\S+$/i.test(value);
+        		}, "No white space please");
+         
+         var result = validator.form();
+         if(!result){
+        	 console.log(result);
+             return false; 
+         }
+         
+         
+         }</script>
+    
     </head>
     <body>
         <!-- START PAGE CONTAINER -->
@@ -22,7 +67,7 @@
            		               <div class="row">
                         <div class="col-md-12">
                             
-                            <form class="form-horizontal" action = "../AppCreatePageServlet" method = "post" >
+                            <form class="form-horizontal" action = "../AppCreatePageServlet" id = "createApp-form" method = "post" onsubmit="return passVali()" >
                             <input type = "hidden" name = "action" value = "createApplication">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -39,7 +84,7 @@
                                         <div class="col-md-6 col-xs-12">                                            
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                <input type="text" class="form-control" name = "AppName" id = "AppName"/>
+                                                <input type="text" class="form-control" name = "AppName" id = "AppName" required/>
                                             </div>                                                                                      
                                         </div>
                                     </div>
@@ -49,7 +94,7 @@
                                         <div class="col-md-6 col-xs-12">                                            
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                <input type="text" class="form-control" name = "AppDesc"/>
+                                                <input type="text" class="form-control" id ="AppDesc" name = "AppDesc" required/>
                                             </div>                                                                                        
                                         </div>
                                     </div>
@@ -59,7 +104,7 @@
                                         <div class="col-md-6 col-xs-12">                                            
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                <input type="text" class="form-control" name = "AppVer"/>
+                                                <input type="text" class="form-control" name = "AppVer" id = "AppVer" required/>
                                             </div>                                                                                       
                                         </div>
                                     </div>
@@ -67,7 +112,7 @@
                                     <div class="form-group">
                                         <label class="col-md-3 col-xs-12 control-label">Application Type</label>
                                         <div class="col-md-6 col-xs-12">                                                                                            
-                                            <select class="form-control select" name = "AppType">
+                                            <select class="form-control select" name = "AppType" required>
                                                 <option>Engineering</option>
                                                 <option>Social</option>
                                                 <option>ECommerce</option>
@@ -94,6 +139,7 @@
                                 </div>
                             </div>
                             </form>
+                            <script type="text/javascript">$("#createApp-form").validate();</script>
                             
                         </div>
                     </div>

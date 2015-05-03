@@ -51,14 +51,18 @@ public class RegistrationPageServlet extends HttpServlet {
 		RegistrationServiceManager rsm = new RegistrationServiceManager();
 		jsonResponse = rsm.RegisterUser(firstName, lastName, email, password);
 		
-try {
-			
-			String statusCode =  jsonResponse.get("code").toString(); 
-			
-			if (statusCode.equals("200")){
-				response.sendRedirect("jsps/pages-login-redirect.jsp");
+	try {
+			if(jsonResponse!=null && jsonResponse.equals("null")){
+				response.sendRedirect("jsps/pages-error.jsp");
 			}
+			if(jsonResponse!=null&&!jsonResponse.isNull("code")) {
+				System.out.println(jsonResponse.toString());
+				String statusCode =  jsonResponse.get("code").toString(); 
 			
+				if (statusCode.equals("200")){
+					response.sendRedirect("jsps/pages-login-redirect.jsp");
+				}
+			}
 			else{
 			response.sendRedirect("jsps/pages-error.jsp");	
 			}

@@ -20,6 +20,7 @@ public class LogoutServiceManager {
 		AppBaasClient appClient = new AppBaasClient();
 		appClient.HttpInit("POST","http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/UserManager/logout");
 		appClient.addHeader("sessionToken",sessionToken);
+		appClient.addHeader("applicationKey", "FrameworkApp1430460991054News");
 		jsonResponse = appClient.execute();
 		
 		System.out.println("json response is:"+jsonResponse);
