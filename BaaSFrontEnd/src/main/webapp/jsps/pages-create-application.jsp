@@ -1,54 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import = "org.json.JSONException" %>
+<%@ page import = "org.json.JSONObject" %>
+<%@ page import = "org.json.JSONArray" %>
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>        
-        <%@include file = "metaAndCss.jsp" %>  
-    
-    <script type="text/javascript">
-         
-         function passVali(){
-        	 
-        	
-        	 var validator = $("#createApp-form").validate({
-        
-        	 rules:  {
-        		 	
-        		 AppName: {
-                		required: true,
-                		nowhitespace:true
-                 },
-                 AppDesc: {
-                	 required: true,
-             		
-                 },
-                 AppVer: {
-                	 required: true,
-              		
-                  },
-                 
-                 },
-         	
-         		
-        	 
 
-        	 
-         
-         });
-        
-        	 $.validator.addMethod("nowhitespace", function(value, element) {
-        		    return this.optional(element) || /^\S+$/i.test(value);
-        		}, "No white space please");
-         
-         var result = validator.form();
-         if(!result){
-        	 console.log(result);
-             return false; 
-         }
-         
-         
-         }</script>
-    
+    <head>        
+        <%@include file = "metaAndCss.jsp" %>
+          
     </head>
     <body>
         <!-- START PAGE CONTAINER -->
@@ -62,10 +24,11 @@
                <%@ include file= "header.jsp" %>
                                  
                 
+                
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-           		               <div class="row">
-                        <div class="col-md-12">
+				<div class="row">
+                <div class="col-md-12">
                             
                             <form class="form-horizontal" action = "../AppCreatePageServlet" id = "createApp-form" method = "post" onsubmit="return passVali()" >
                             <input type = "hidden" name = "action" value = "createApplication">
@@ -75,11 +38,10 @@
                                     <ul class="panel-controls">
                                         <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
                                     </ul>
-                                </div>
-                               
-                                <div class="panel-body">                                                                        
-                                    
-                                    <div class="form-group">
+                                </div> 
+                                  <div class="panel-body">
+                                  
+                                  <div class="form-group">
                                         <label class="col-md-3 col-xs-12 control-label">Application Name</label>
                                         <div class="col-md-6 col-xs-12">                                            
                                             <div class="input-group">
@@ -109,45 +71,51 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="form-group">
+                                     <div class="form-group">
                                         <label class="col-md-3 col-xs-12 control-label">Application Type</label>
                                         <div class="col-md-6 col-xs-12">                                                                                            
-                                            <select class="form-control select" name = "AppType" required>
+                                            <div class="form-group">
+                                            <select class="form-control" name = "AppType" required>
                                                 <option>Engineering</option>
                                                 <option>Social</option>
                                                 <option>ECommerce</option>
-                                                <option>News</option>                                              
-                                            </select>                                            
+                                                <option>News</option> 
+                                            </select>
+                                        </div>                                            
                                         </div>
-                                    </div>
-                                                                    
-                                    <div class="form-group">
+                                        </div>
+                                        
+                                        <div class="form-group">
                                         <label class="col-md-3 col-xs-12 control-label">Services</label>
-                                        <div class="col-md-6 col-xs-12">                                                                                                                                        
+                                        <div class="col-md-6 col-xs-12"> 
+                                        <div class="form-group">                                                                                                                                       
                                             <label class="check"><input type="checkbox" name = "ServiceName" id = "userService" value = "UserManager"class="icheckbox" /> User Manager</label><br/>
                                             <label class="check"><input type="checkbox" name = "ServiceName" value ="AppManager" class="icheckbox" /> Application Manager</label><br/>
                                             <label class="check"><input type="checkbox" name = "ServiceName" value = "ObjManager" class="icheckbox" /> Object Manager</label><br/>
                                             <label class="check"><input type="checkbox" name = "ServiceName" value = "NotificationManager" class="icheckbox" /> Notification Manager</label>
+                                        
                                         </div>
+                                    	</div>
+                                        
                                     </div>
-                                     
-
-                                </div>
-                                <div class="panel-footer">
+                                    <div class="panel-footer">
                                     <button class="btn btn-default">Clear Form</button>                                    
                                     <button class="btn btn-primary pull-right">Submit</button>
                                 </div>
-                            </div>
-                            </form>
-                            <script type="text/javascript">$("#createApp-form").validate();</script>
-                            
-                        </div>
-                    </div>
+                                    
+                                    
+                                    
+                                  
+                                  </div> 
+                                </div>
+                                </form> 
                 </div>
+               </div> 
                 <!-- END PAGE CONTENT WRAPPER -->                
             </div>            
             <!-- END PAGE CONTENT -->
         </div>
+        
         <!-- END PAGE CONTAINER -->
 
        <%@ include file = "MessageBoxAndPreloads.jsp" %>           

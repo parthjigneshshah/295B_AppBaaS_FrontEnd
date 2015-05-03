@@ -19,29 +19,19 @@
     <body>
         
         <div class="login-container">
-        	
             <div class="login-box animated fadeInDown">
                 <div class="login-logo"></div>
-          
-                 <%
-                						String message = "";
-                						System.out.println("message:"+message);
-                						
-                	
-               						 %>
+                 <%	String message = "";
+                	System.out.println("message:"+message);
+                %>
                 <%
                 if(session.getAttribute("loginErrorMsg") != null ){
-                	message = session.getAttribute("loginErrorMsg").toString();
+                message = session.getAttribute("loginErrorMsg").toString();
                 }
                 %>
-                <%
-                	if(message.length() > 0) {%>
-                		
+                <%if(message.length() > 0) {%>
                 		<div class="login-title" style = "color:#ffffff; font-size: 14px;"><strong>Error</strong>,   <%=message%></div>
-                		
-                	<%}
-                
-                %>
+                <%} %>
                 
                 <div class="login-body">
                     <div class="login-title"><strong>Welcome</strong>, Please login</div>
@@ -67,9 +57,7 @@
                     </div>
                     </form>
                 </div>
-                <%@ include file= "footer.jsp" %>
-                
-            </div>
+               </div>
             
         </div>
         

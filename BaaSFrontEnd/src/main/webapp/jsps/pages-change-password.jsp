@@ -5,6 +5,51 @@
     <head>        
         <%@include file = "metaAndCss.jsp" %>  
     </head>
+    
+    <script type="text/javascript">
+         
+         function passVali(){
+        	 
+        	 
+        	 
+        	 var validator = $("#changepassword-form").validate({
+        
+        	 rules:  {
+
+                 password: {
+                	 required: true,
+              		nowhitespace:true
+                  },
+                  confimpassword: {
+                 required: true,
+                 equalTo: "#password"
+             }, 
+                 },
+         	
+         		message: {
+         			
+         			confirmPassword:"password mismatch"
+         			
+         		}
+        	 
+
+        	 
+         
+         });
+        
+        	 $.validator.addMethod("nowhitespace", function(value, element) {
+        		    return this.optional(element) || /^\S+$/i.test(value);
+        		}, "No white space please");
+         
+         var result = validator.form();
+         if(!result){
+        	 console.log(result);
+             return false; 
+         }
+         
+         
+         }</script>
+    
     <body>
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
@@ -28,7 +73,7 @@
             
                                     <div class="login-box animated fadeInDown">
                                         <div class="login-body">
-                                             <form action="../UpdatePasswordServlet" class="form-horizontal" method="post">
+                                             <form action="../UpdatePasswordServlet" class="form-horizontal" method="post" onsubmit="return passVali()" id = "changepassword-form">
                                              <div class="form-group">
                         <div class="col-md-12">
                             <input type="password" name = "password" id = "password" class="form-control" placeholder="New Password"/>
@@ -36,7 +81,7 @@
                     </div>  
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="password" name = "confirmpassword" id = "confimpassword" class="form-control" placeholder="Confirm Password"/>
+                            <input type="password" name = "confimpassword" id = "confimpassword" class="form-control" placeholder="Confirm Password" />
                         </div>
                     </div>  
                     
