@@ -45,13 +45,8 @@
          	
          		message: {
          			
-         			confirmPassword:"password mismatch"
-         			
+         			confirmPassword:"password mismatch"	
          		}
-        	 
-
-        	 
-         
          });
         
         	 $.validator.addMethod("nowhitespace", function(value, element) {

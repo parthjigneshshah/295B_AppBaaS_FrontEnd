@@ -69,6 +69,10 @@ public class GetApplicationServlet extends HttpServlet {
 						
 						System.out.println("this are the services"+service.toString());
 						
+						if(service.getString("service_name").equals("AnalyticsManager")){
+							session.setAttribute("AnalyticsManagerPresent", "true");
+							System.out.println(session.getAttribute("AnalyticsManagerPresent"));
+						}
 						
 					}
 				System.out.println("applications are:"+app.toString());

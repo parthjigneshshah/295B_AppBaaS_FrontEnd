@@ -9,7 +9,9 @@
        
             
          <!-- START PAGE SIDEBAR -->
-         <%String subScriptionCode = session.getAttribute("subscriptionCode").toString(); %>
+         <%
+        
+         String subScriptionCode = session.getAttribute("subscriptionCode").toString(); %>
             <div class="page-sidebar">
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
@@ -53,8 +55,25 @@
                         <a href="../GetApplicationServlet"><span class="fa fa-desktop"></span> <span class="xn-text">Applications</span></a>                        
                     </li>                
                     <li><a href="../UserDetailServlet"><span class="fa fa-pencil"></span> Edit Profile</a></li>
-                    <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>               
-                    <%String uName = session.getAttribute("UserName").toString(); %>
+                   
+                    <%	String AnalyticsManagerPresent = "";
+                	System.out.println("message:"+AnalyticsManagerPresent);
+                %>
+                    <%
+                if(session.getAttribute("AnalyticsManagerPresent") != null ){
+                	AnalyticsManagerPresent = session.getAttribute("AnalyticsManagerPresent").toString();
+                }
+                %>
+                <%String uName = session.getAttribute("UserName").toString(); %>
+                	   <%
+                    if(uName.equals("adminuser@appbaas.com")){%>
+                	   
+                	   <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>
+                	   <% } %>
+                	      
+                 
+                                 
+                    
                     
                     <%
                     if(!uName.equals("adminuser@appbaas.com")){

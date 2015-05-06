@@ -20,6 +20,7 @@ public class AnalyticsServiceManager {
 		AppBaasClient appClient = new AppBaasClient();
 		
 		appClient.HttpInit("GET","http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/AnalyticsManager/getDevelopersCount");
+		appClient.addHeader("applicationKey", "FrameworkApp1430460991054News");
 		jsonResponseDevCount = appClient.execute();
 		return jsonResponseDevCount;
 		
@@ -29,6 +30,7 @@ public class AnalyticsServiceManager {
 	{
 		AppBaasClient appClient = new AppBaasClient();
 		appClient.HttpInit("GET", "http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/AnalyticsManager/getApplicationTypesCount");
+		appClient.addHeader("applicationKey", "FrameworkApp1430460991054News");
 		jsonResponseAppTypeCount = appClient.execute();
 		return 	jsonResponseAppTypeCount;
 	}

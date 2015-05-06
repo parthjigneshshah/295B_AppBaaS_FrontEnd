@@ -17,8 +17,8 @@
                <%@ include file= "header.jsp" %>
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-                
-                    <div class="row">
+				
+					     <div class="row">
                         <div class="col-md-12">
                             
                             
@@ -26,7 +26,7 @@
                                                             
                                 <div class="panel panel-default tabs">                            
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Create Application</a></li>
+                                        <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Subscribe Alerts</a></li>
                                         <li><a href="#tab-second" role="tab" data-toggle="tab">Send Notification to All Users</a></li>
                                         <li><a href="#tab-third" role="tab" data-toggle="tab">Unsubscribe Alerts</a></li>
                                        
@@ -34,38 +34,10 @@
                                     <div class="panel-body tab-content" style="font-size: 14px">
                                         <div class="tab-pane active" id="tab-first">
                                            
-                                           <p>Method Type: POST</p>
-
-											<p>Header Parameters : ( sessionToken : appdemo.user@sjsu.edu#1430440615142 )</p>
-											<p>API : http://www.appbaaservices.om:8080/AppBaasServiceFramework/services/rest/AppManager/createApp</p>											
-											<p>Request Body :</p>
-											<p>
-											{
-    											"appName": "appDemoUserApp",
-    											"appDesc": "appDemoUserAppDesc",
-    											"services": [
-        										{
-            									"service_name": "UserManager"
-        										},
-        										{
-            									"service_name": "AppManager"
-        										}
-    											],
-    											"appVersion": "1",
-    											"appType": "Engineering"
-												}
-											</p>
-											<p>Response Body :</p>
-											
-											<p>
-											{
-    										"appKey": "appDemoUserApp1430440634776Engineering",
-    										"responseObject": {
-        									"code": "200",
-        									"message": "Application Created Successfully."
-    										}
-											}
-											</p>
+                                           <p>Method Type : POST</p>
+                                           <p>Header Parameter : ( sessionToken : appdemo.user@sjsu.edu#1430440615142 )</p>
+                                           <p>Header Parameter : (applicationKey : appDemoUserApp1430440634776Engineering)</p>
+                                           <p>API: http://www.appbaaservices.om:8080/AppBaasServiceFramework/services/rest/AlertManager/subscribeAlerts</p> 
                                             
                                         </div>
                                         <div class="tab-pane" id="tab-second">
@@ -89,10 +61,7 @@
                             
                           
                         </div>
-                    </div>
-                
-					  	 
-					
+                    </div> 
 
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->                

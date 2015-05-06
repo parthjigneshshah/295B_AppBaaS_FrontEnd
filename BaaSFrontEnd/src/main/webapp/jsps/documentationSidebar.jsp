@@ -20,15 +20,17 @@
                         <a href="pages-documentaion-usermanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">User Manager</span></a>                        
                     </li>                    
                    <li>
-                        <a href="pages-documentaion-appmanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Application Manager</span></a>                        
+                        <a href="pages-documentaion-analyticsmanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Analytics Manager</span></a>                        
                     </li>  
                     <li>
-                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Notification Manager</span></a>                        
+                        <a href="pages-documentation-notificationmanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Notification Manager</span></a>                        
                     </li>  
                     <li>
-                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Object Manager</span></a>                        
+                        <a href="pages-documentation-objmanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Object Manager</span></a>                        
                     </li>  
-                   
+                    <li>
+                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">SDK Client Guide</span></a>                        
+                    </li>
                        
                         <% if(session.getAttribute("UserName") == null){
                         	System.out.println("null session");}

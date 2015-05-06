@@ -9,6 +9,7 @@
 <html lang="en">
 <head>
 <%@include file="metaAndCss.jsp"%>
+
 </head>
 <body>
 	<!-- START PAGE CONTAINER -->
@@ -92,6 +93,13 @@
 
 									<p>
 										<small>Description</small><br /><%=app.getString("appDesc") %></p>
+									<%
+											boolean userManagerFlag = false;
+											boolean objManagerFlag = false;
+											boolean notificationManagerFlag = false;
+											boolean analyticsManagerFlag = false;
+
+%>
 									<% HashMap<String, String> map = new HashMap<String, String>() ; %>
 									<%for(int j = 0; j < no_of_services; j++){
                                         	JSONObject service = new JSONObject();
@@ -104,44 +112,65 @@
 										<% }
 									System.out.println("map size:"+map.size());
 									
-									 for(int x = 0; x < 4; x++){
+									
 										
-										if(map.containsKey("UserManager"))
-										{ %>
-										<small>Service:</small> <%= map.get("UserManager") %></p>
-										
-											<% System.out.println(map.get("UserManager"));
-											map.remove("UserManager");
-										}
-										else if(map.containsKey("ObjManager"))
-										{ %>
-										<small>Service:</small> <%= map.get("ObjManager") %></p>
-										
-											<% System.out.println(map.get("ObjManager"));
-											map.remove("ObjManager");
-										}
-										else if(map.containsKey("AppManager"))
-										{ %>
-										<small>Service:</small> <%= map.get("AppManager") %></p>
-										
-											<% System.out.println(map.get("AppManager"));
-											map.remove("AppManager");
-										}
-										else if(map.containsKey("NotificationManager"))
-										{ %>
-										<small>Service:</small> <%= map.get("NotificationManager") %></p>
-										
-											<% System.out.println(map.get("NotificationManager"));
-											map.remove("NotificationManager");
-										}
-										else
-										{ %>
-										<small>Service:</small> not registered </p>
-										<%
-											System.out.println("Not Registered.");
-										}	
-										
-									} %>
+										 if(map.containsKey("UserManager"))
+											{ %>
+											<small><%= map.get("UserManager") %>: </small> Registered</p>
+											
+												<% System.out.println(map.get("UserManager"));
+												map.remove("UserManager");
+												userManagerFlag = true;
+											} 
+											
+										 else{%>
+											 <small>UserManager: </small> Not registered </p>
+											 
+										 <% }
+										 
+										 if(map.containsKey("AnalyticsManager"))
+											{ %>
+											<small><%= map.get("AnalyticsManager") %>: </small> Registered</p>
+											
+												<% System.out.println(map.get("AnalyticsManager"));
+												map.remove("AnalyticsManager");
+												analyticsManagerFlag = true;
+											} 
+											
+										 else{%>
+											 <small>AnalyticsManager: </small> Not registered </p>
+											 
+										 <% }
+										 if(map.containsKey("ObjManager"))
+											{ %>
+											<small><%= map.get("ObjManager") %>: </small> Registered</p>
+											
+												<% System.out.println(map.get("ObjManager"));
+												map.remove("ObjManager");
+												objManagerFlag = true;
+												System.out.println(""+objManagerFlag);
+											} 
+											
+										 else{%>
+											 <small>ObjManager: </small> Not registered </p>
+											 
+										 <% }
+										 if(map.containsKey("NotificationManager"))
+											{ %>
+											<small><%= map.get("NotificationManager") %>: </small> Registered</p>
+											
+												<% System.out.println(map.get("NotificationManager"));
+												map.remove("NotificationManager");
+												notificationManagerFlag = true;
+											} 
+											
+										 else{%>
+											 <small>NotificationManager: </small> Not registered </p>
+											 
+										 <% }
+										 
+										 
+									 %>
 										
 									
 									<form name="appKey" method="get">
@@ -151,17 +180,55 @@
 										session.setAttribute("appKey", value);
 										%>
 										<p>
-											<small>App Data:</small><br /> *click <a
+											<small>App Data:</small><br />
+											
+											<%if(objManagerFlag){%>
+											
+											*click <a
 												href="
                           					 <c:url value="../UtilityServlet">
        										 <c:param name="action" value="<%=value%>"/>
         									 </c:url>">HERE:
 												Data</a> to navigate application data
+											</p>
+											<%} 
+											else{
+												System.out.println("in else");
+											%>
+											
+											 *Application Data not available. 
+											
+											<% }
+											%>
+											
+											 
+										<p>
+											<small>App Notification:</small><br />
+										<%if(notificationManagerFlag){%>
+											
+											 *Click <a href = "pages-notification.jsp">HERE: Notification</a> to send notifications to registered users.
+											
+											
+										<%}else{%>
+											
+											*Notification Service not available.
+										<%} %>
+										
 										</p>
 										<p>
-											<small>App Data:</small><br /> Click <a href = "pages-notification.jsp">HERE: Notification</a> to send notifications to registered users.
+											<small>App Analytics:</small><br />
+										<%if(analyticsManagerFlag){%>
+											
+											 *Click <a href = "#">HERE: Analytics</a> to view the dashboard for app.
+											
+											
+										<%}else{%>
+											
+											*Analytics Service not available.
+										<%} %>
+										
 										</p>
-
+																				
 
 
 
@@ -195,3 +262,4 @@
 	<%@ include file="scripts.jsp"%>
 </body>
 </html>
+	

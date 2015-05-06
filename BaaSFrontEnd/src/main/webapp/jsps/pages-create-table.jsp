@@ -16,7 +16,7 @@
         	$("#addColumn").click(function(){
         		x++;
         		document.getElementById("counter").value = x;
-        		appendString ='<div class = "form-group"><div class="form-group"><label class="col-md-3 col-xs-12 control-label">Column Name</label><div class="col-md-6 col-xs-12"><div class="input-group"><span class="input-group-addon"><span class="fa fa-pencil"></span></span><input type="text" class="form-control" name="ColName'+x+'" required/></div></div><label class="check"><input type="checkbox" name = "PrimaryKey'+x+'" id = "PrimaryKey'+x+'" value = "colName' + x +'" unchecked class="icheckbox" />Primary Key</label><br/></div><div class="form-group"><label class="col-md-3 col-xs-12 control-label">Data Type</label><div class="col-md-6 col-xs-12"><select class="form-control select" name = "DataType'+x+'"><option>INT</option><option>VARCHAR(30)</option></select></div><a href = "#" class = "removeField">Remove</a></div></div>' ;
+        		appendString ='<div class = "form-group"><div class="form-group"><label class="col-md-3 col-xs-12 control-label">Column Name</label><div class="col-md-6 col-xs-12"><div class="input-group"><span class="input-group-addon"><span class="fa fa-pencil"></span></span><input type="text" class="form-control" name="ColName'+x+'" required/></div></div><label class="check"><input type="checkbox" name = "PrimaryKey'+x+'" id = "PrimaryKey'+x+'" value = "colName' + x +'" unchecked class="icheckbox" />Primary Key</label><br/></div><div class="form-group"><label class="col-md-3 col-xs-12 control-label">Data Type</label><div class="col-md-6 col-xs-12"><select class="form-control select" name = "DataType'+x+'"><option>INT</option><option>VARCHAR(50)</option><option>DOUBLE</option><option>FLOAT</option><option>TINYINT(1)</option><option>BIGINT</option></select></div><a href = "#" class = "removeField">Remove</a></div></div>' ;
         	 	$("#dropdown").append(appendString);
        
         	});
@@ -33,11 +33,14 @@
         		 no_of_checks++;
         		 if(no_of_checks > 1){
         			 alert("Only one Primary key per table allowed");
+        			 $(this).attr("checked", false);
+        			
         		 }
         		 else if(no_of_checks == 1){
         			 
         			 var pkCheck = $(this).attr("checked");
         			 document.getElementById("check").value = x;
+        			 
         		 }
         		 
         		 
@@ -59,27 +62,15 @@
          <script type="text/javascript">
          
          function passVali(){
-        	 
-        
-        	 
+        	
         	 var validator = $("#createTable-form").validate({
-        
         	 rules:  {
-        		 	
-        		 TableName: {
+        		 tableName: {
                 		required: true,
                 		nowhitespace:true
                  },
-                
-                 
-                 }
-         	
-         		
-        	 
-
-        	 
-         
-         });
+               }
+         	 });
         
         	 $.validator.addMethod("nowhitespace", function(value, element) {
         		    return this.optional(element) || /^\S+$/i.test(value);
@@ -90,9 +81,7 @@
         	 console.log(result);
              return false; 
          }
-         
-         
-         }</script>
+ }</script>
         
         
     </head>
@@ -135,7 +124,7 @@
                                         <div class="col-md-6 col-xs-12">                                            
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                <input type="text" class="form-control" name = "tableName" id = "TableName" value = "<%= request.getParameter("tableName") %>" required/>
+                                                <input type="text" class="form-control" name = "tableName" id = "tableName" value = "<%= request.getParameter("tableName") %>" required/>
                                             </div>                                                                                      
                                         </div>
                                     </div>
@@ -152,26 +141,7 @@
                                     <button class="btn btn-primary pull-right" id = "sessionCounter">Submit</button>
                                 </div>
                              </form>
-                             <script type="text/javascript">$("#createTable-form").validate();</script>
-                            
-        
-                                                   
-            
-                
-                
-            
-    
-    
-        
-                                                                                                    
-            
-                
-                
-                                                        
-        
-    
-    
-                            
+                             
                         </div>
                     </div>
                 </div>

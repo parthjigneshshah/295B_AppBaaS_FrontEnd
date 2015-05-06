@@ -90,7 +90,7 @@
                                         <div class="col-md-6 col-xs-12"> 
                                         <div class="form-group">                                                                                                                                       
                                             <label class="check"><input type="checkbox" name = "ServiceName" id = "userService" value = "UserManager"class="icheckbox" /> User Manager</label><br/>
-                                            <label class="check"><input type="checkbox" name = "ServiceName" value ="AppManager" class="icheckbox" /> Application Manager</label><br/>
+                                            <label class="check"><input type="checkbox" name = "ServiceName" value ="AnalyticsManager" class="icheckbox" /> Analytics Manager</label><br/>
                                             <label class="check"><input type="checkbox" name = "ServiceName" value = "ObjManager" class="icheckbox" /> Object Manager</label><br/>
                                             <label class="check"><input type="checkbox" name = "ServiceName" value = "NotificationManager" class="icheckbox" /> Notification Manager</label>
                                         
