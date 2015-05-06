@@ -6,13 +6,46 @@
           
     </head>
     <body>
+    
        
             
          <!-- START PAGE SIDEBAR -->
             <div class="page-sidebar">
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
-                    <li class="xn-logo">
+                   
+                       
+                        <% if(session.getAttribute("UserName") == null){
+                        	System.out.println("null session");%>
+                        	
+                        	<li class="xn-logo">
+
+                        <a href="pages-registration.jsp"><img src = "../img/logo-small.png"></a>
+                        <a href="#" class="x-navigation-control"></a>
+                    </li>
+                  <li>
+                        <a href="pages-documentaion-usermanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">User Manager</span></a>                        
+                    </li>                    
+                   <li>
+                        <a href="pages-documentaion-analyticsmanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Analytics Manager</span></a>                        
+                    </li>  
+                    <li>
+                        <a href="pages-documentation-notificationmanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Notification Manager</span></a>                        
+                    </li>  
+                    <li>
+                        <a href="pages-documentation-objmanager.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">Object Manager</span></a>                        
+                    </li>  
+                    <li>
+                        <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">SDK Client Guide</span></a>                        
+                    </li>
+                        	<%}
+                        	
+                        else {
+                        	String subScriptionCode = session.getAttribute("subscriptionCode").toString(); 
+                        	String userName = session.getAttribute("UserName").toString();%>
+                        	
+                        	 <li class="xn-logo">
+
                         <a href="../GetApplicationServlet"><img src = "../img/logo-small.png"></a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
@@ -31,13 +64,7 @@
                     <li>
                         <a href="pages-documentation.jsp"><span class="fa fa-files-o"></span> <span class="xn-text">SDK Client Guide</span></a>                        
                     </li>
-                       
-                        <% if(session.getAttribute("UserName") == null){
-                        	System.out.println("null session");}
                         	
-                        else {
-                        	String subScriptionCode = session.getAttribute("subscriptionCode").toString(); 
-                        	String userName = session.getAttribute("UserName").toString();%>
                         <li class="xn-profile">
                         <a href="../pages-profile.html" class="profile-mini">
                             <img src="../assets/images/users/no-image.jpg" alt="John Doe"/>
