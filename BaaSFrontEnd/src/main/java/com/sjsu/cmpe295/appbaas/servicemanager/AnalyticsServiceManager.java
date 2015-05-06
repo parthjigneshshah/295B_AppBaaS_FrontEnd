@@ -34,5 +34,17 @@ public class AnalyticsServiceManager {
 		jsonResponseAppTypeCount = appClient.execute();
 		return 	jsonResponseAppTypeCount;
 	}
+	
+	public JSONObject getUserAppAnalytics(String applicationKey, String sessionToken)
+	{
+		AppBaasClient appClient = new AppBaasClient();
+		appClient.HttpInit("GET", "http://54.191.98.11:8080/AppBaasServiceFramework/services/rest/AnalyticsManager/getAppAnalytics");
+		appClient.addHeader("applicationKey", applicationKey);
+		appClient.addHeader("sessionToken", sessionToken);
+		jsonResponseAppTypeCount = appClient.execute();
+		return 	jsonResponseAppTypeCount;
+	}
+	
+	
 
 }

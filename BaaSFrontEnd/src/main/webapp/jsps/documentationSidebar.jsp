@@ -60,12 +60,12 @@
                     </div>  
                     
                     </li>    
-                     <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>
+                   
                      <li>
                         <a href="../GetApplicationServlet"><span class="fa fa-desktop"></span> <span class="xn-text">Applications</span></a>                        
                     </li>                
                     <li><a href="../UserDetailServlet"><span class="fa fa-pencil"></span> Edit Profile</a></li>
-                    <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>               
+                                  
                     <%String uName = session.getAttribute("UserName").toString(); %>
                     
                     <%
@@ -75,13 +75,14 @@
                     
                     else{%>
                     <li><a href="../GetSubscriptionServlet"><span class="fa fa-question"></span>Subscribe</a></li>
+                  
                     <%}
                     }%>
                     <%
                     
                     
                     if( uName.equals("adminuser@appbaas.com") ){%>
-                    	
+                  		   <li><a href="../AnalyticsServlet"><span class="fa fa-user"></span> Dashboard</a></li>  	
                     	 <li><a href="pages-notification.jsp"><span class="fa fa-envelope"></span>Send Notification</a></li>
                     	
                    <% }%>

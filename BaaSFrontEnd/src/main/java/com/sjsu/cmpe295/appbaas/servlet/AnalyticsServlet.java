@@ -36,10 +36,14 @@ public class AnalyticsServlet extends HttpServlet {
 	JSONObject jsonResponseDevCount = null;
 	JSONObject jsonResponseAppTypeCount = null;
 	
+	HttpSession session =  request.getSession();
+	
+	
 	AnalyticsServiceManager asm = new AnalyticsServiceManager();
 	
 	jsonResponseDevCount = asm.getAnalytics();
 	jsonResponseAppTypeCount = asm.getAppAnalytics();
+	
 	System.out.println(jsonResponseDevCount.toString());
 	System.out.println(jsonResponseAppTypeCount.toString());
 	ArrayList<String> countList = new ArrayList<String>();
@@ -67,7 +71,7 @@ public class AnalyticsServlet extends HttpServlet {
 			
 		}
 			
-		HttpSession session =  request.getSession();
+	
 		session.setAttribute("countArrayList", countList);
 		session.setAttribute("appTypeCountList", appTypeCountList);	
 		response.sendRedirect("jsps/pages-charts.jsp");

@@ -131,6 +131,12 @@
   	<description></description>
   	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.PdfDownloadServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AnalyticsUserServlet</servlet-name>
+  	<display-name>AnalyticsUserServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.sjsu.cmpe295.appbaas.servlet.AnalyticsUserServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>RegistrationPageServlet</servlet-name>
@@ -215,5 +221,9 @@
   <servlet-mapping>
   	<servlet-name>PdfDownloadServlet</servlet-name>
   	<url-pattern>/PdfDownloadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AnalyticsUserServlet</servlet-name>
+  	<url-pattern>/AnalyticsUserServlet</url-pattern>
   </servlet-mapping>
 </web-app>

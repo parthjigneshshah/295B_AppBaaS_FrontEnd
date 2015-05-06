@@ -219,7 +219,13 @@
 											<small>App Analytics:</small><br />
 										<%if(analyticsManagerFlag){%>
 											
-											 *Click <a href = "#">HERE: Analytics</a> to view the dashboard for app.
+											 <a
+												href="
+                          					 <c:url value="../AnalyticsUserServlet">
+       										 <c:param name="action" value="<%=value%>"/>
+        									 </c:url>">HERE:
+												Analytics</a> for the application.
+											</p>
 											
 											
 										<%}else{%>
